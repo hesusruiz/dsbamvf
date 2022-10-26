@@ -10,6 +10,6 @@ sequenceDiagram
     participant PacketDeliveryNode;
     participant PacketDeliveryAR;
 
-    actor->>+PacketDeliveryPortal: Accesses portal;
-    PacketDeliveryPortal->>-actor: Select Login method;
+    actor->PacketDeliveryPortal: Accesses portal;
+    PacketDeliveryPortal->actor: Select Login method;
 ```
