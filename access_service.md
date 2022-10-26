@@ -9,6 +9,8 @@ sequenceDiagram
     participant PacketDeliveryProxy
     participant PacketDeliveryNode
     participant PacketDeliveryAR
-    actor->PacketDeliveryPortal: Accesses portal
-    PacketDeliveryPortal->actor: Select Login method
+
+    Customer->>+PacketDeliveryPortal: Accesses portal
+    PacketDeliveryPortal->>-Customer: Select Login method
 ```
+
