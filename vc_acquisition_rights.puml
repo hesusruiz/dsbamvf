@@ -1,0 +1,104 @@
+@startuml vc_acquisition_rights
+
+title Packet Delivery - Acquisition of rights
+
+autonumber 1
+skinparam SequenceBoxBorderColor transparent
+
+
+box User #MistyRose
+    actor "Happy Pets\nEmployee" as user #f7a6a6
+    participant "Employee\nSIOP" as siop #f7a6a6
+endbox
+
+
+box Marketplace #ebfcef
+    participant "Marketplace" as market #DarkSeaGreen
+endbox
+
+
+database "Universal\nResolver" as DIDR
+
+
+user -> market ++ #DarkSeaGreen: Access portal
+market --> user: Select identity provider
+deactivate market
+
+
+note over user, market
+    One of the login options is "Verifiable Credential", and
+    the Marketplace displays a QR
+end note
+user -> siop ++ #f7a6a6: Scan QR
+note right: The employee uses its wallet to scan the QR in Packet Delivery Portal
+
+note over siop: The wallet uses the URL inside the QR to start the process
+siop -> market--++ #DarkSeaGreen:POST \n/authentication-requests
+note over market: Now we start the standard SIOP process
+
+market -> market :Create Authenticaton Request
+market --> siop --++ #f7a6a6:URI + <Request Token>
+
+siop -> DIDR --++: Resolve DID of\nMarketplace
+note over DIDR
+    This is a Universal Resolver blockchain node, and there may be as many as needed
+    Its mission is to resolve DIDs using the blockchain and return the associated DID Document
+    The DID Document (as per W3C) contains relevant information about the entity owner of the DID
+    It contains its Public Key, used to verify the digital signature of the entity
+    It also contains the status of the entity in the Data Space ecosystem
+    It is extensible, and can contain any public information which may be relevant for the use case
+    The Universal Resolver server has to be operated by a trusted entity for the customer
+    There may be as many nodes as needed operated by different entities
+    At least one of those trusted entities has to be configured in the wallet of the user
+end note 
+DIDR --> siop --++ #f7a6a6: DID Document of\nMarketplace
+siop -> siop : Verify Authentication Request
+note right siop
+    The wallet checks the digital signature of the Authentication Request
+    Checks that the DID inside the request matches the DID inside the DID Document from Universal Resolver
+    It also checks additional info inside the request against the DID Document
+    Now the wallet knows that Marketplace is a trusted entity and that it signed the request
+end note
+
+siop -> siop: Create Authentication Response\nURI + <id_token>
+note right siop
+    The wallet creates a SIOP Authentication Response
+    It includes a Verifiable Credential as an additional claim
+    The Verifiable Credential was issued by Happy Pets as an employee badge
+end note
+siop -> market --++ #DarkSeaGreen: POST <id_token>\n/siop-sessions
+
+newpage Packet Delivery - Acquisition of rights (continued)
+
+market -> DIDR --++: Resolve DID of\nPacket Delivery Co
+note over DIDR
+    This can be a blockchain node of Marketplace or of any entity trusted by it
+    For maximum level of trust, the node is operated by Marketplace
+    The Verifiable Credential received from the user was signed by Happy Pets and includes its DID
+    Marketplace retrieves from blockchain the DID Document for that DID
+    Checks the digital signature and other info (eg., status in iShare satellite)
+end note
+DIDR --> market --++ #DarkSeaGreen: DID Document with public key
+market -> market : Verify Authentication Response
+note over market
+    The VC issued by Happy Pets to its employee includes the Public Key of the SIOP used to sign
+    The Public Key of the SIOP was verified when the employee was onboarded by Happy Pets
+end note
+market -> market : Create Access Token\n<Access Token>
+note over market
+    Marketplace creates an access token to send to the wallet for
+    further access to services
+end note
+market --> siop ++ #f7a6a6: HTTP 200: <Access Token>
+siop --> user -- : Display OK
+
+market -> market: Refresh the Portal
+
+note over market
+    The webpage of the Portal is refreshed to
+    present the services to the employee
+end note
+
+market -> user-- : Select offering\n1. Standard Delivery\n2. Premium Delivery
+
+@enduml

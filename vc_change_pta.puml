@@ -1,0 +1,143 @@
+@startuml vc_change_pta
+
+title Packet Delivery - HappyPets customer changes PTA
+
+autonumber 1
+skinparam SequenceBoxBorderColor transparent
+
+
+box HappyPets #AliceBlue
+    participant "HappyPets \nAuthorisation Registry" as har #a5d6e8
+    participant "HappyPets\nIdentity Provider" as hidp #a5d6e8
+endbox
+
+database "Universal\nResolver" as DIDR
+
+box User #MistyRose
+    participant "Customer\nSIOP" as siop #f7a6a6
+    actor "Prime Customer" as primeCustomer #f7a6a6
+endbox
+
+box PacketDelivery #ebfcef
+    participant "Packet Delivery Portal" as packetDeliveryPortal #92e8c6
+    participant "Packet Delivery Co\nProxy" as packetDelivery #92e8c6
+    database "Packet Co\nBlockhain\nnode" as DIDR_pack #92e8c6
+    participant "Packet Delivery Co\nAuthorization Registry" as par #92e8c6
+endbox
+
+'Visit the Packet Delivery Portal and select logon method
+primeCustomer->packetDeliveryPortal ++: Accesses portal
+return Login? + Select IDP
+
+note over primeCustomer, packetDeliveryPortal
+    One of the login options is "Verifiable Credential", and
+    the Packet Delivery Portal displays a QR
+end note
+primeCustomer->siop ++:Scan QR
+note right: The customer uses its wallet to scan the QR in Packet Delivery Portal
+
+'Perform a POST to start the process
+note over siop: The wallet uses the URL inside the QR to start the process
+siop -> packetDelivery ++:POST \n/authentication-requests
+
+note over packetDelivery: Now we start the standard SIOP process
+packetDelivery -> packetDelivery :Create Authenticaton Request
+return URI + <Request Token>
+note right siop
+    The Request Token contains the DID of Packet Delivery, among other things
+    The URI is the standard SIOP URI for callback
+end note
+
+'Resolve the DID of Packet Delivery
+siop -> DIDR ++: Resolve DID of\nPacket Delivery Co
+note over DIDR, siop
+    This is a Universal Resolver blockchain node, and there may be as many as needed
+    Its mission is to resolve DIDs using the blockchain and return the associated DID Document
+    The DID Document (as per W3C) contains relevant information about the entity owner of the DID
+    It contains its Public Key, used to verify the digital signature of the entity
+    It also contains the status of the entity in the iShare Satellite ecosystem
+    It is extensible, and can contain any public information which may be relevant for the use case
+    The Universal Resolver server has to be operated by a trusted entity for the customer
+    There may be as many nodes as needed operated by different entities
+    At least one of those trusted entities has to be configured in the wallet of the user
+end note 
+return DIDDocument of\nPacket Delivery Co
+
+siop -> siop: Verify Authentication Request
+note right siop
+    The wallet checks the digital signature of the Authentication Request
+    Checks that the DID inside the request matches the DID inside the DID Document from Universal Resolver
+    It also checks additional info inside the request against the DID Document
+    Now the wallet knows that Packet Delivery Co is a trusted entity and that it signed the request
+end note
+siop -> siop: Create Authentication Response\nURI + <id_token>
+
+note right siop
+    The wallet creates a SIOP Authentication Response
+    The id_token includes a Verifiable Credential as an additional claim
+    The Verifiable Credential was issued by Happy Pets to the customer
+end note
+'Perform a POST to send the Authentication Response
+siop -> packetDelivery ++: POST <Authentication Response>\n/siop-sessions
+
+'Resolve DID of HappyPets to see if it is trusted issuer
+packetDelivery->DIDR_pack ++: Resolve DID of\nHappy Pets
+note left DIDR_pack
+    This can be a blockchain node of Packet Delivery Co or of any entity trusted by it
+    For maximum level of trust, the node is operated by Packet Delivery Co
+    The Verifiable Credential received from the user was signed by Happy Pets and includes its DID
+    Packet Delivery Co retrieves from blockchain the DID Document for that DID
+    Checks the digital signature and other info (eg., status in iShare satellite)
+end note
+return DID Document with public key
+
+packetDelivery->packetDelivery: Verify Authentication Response
+note over packetDelivery
+    The VC issued by Happy Pets to the customer includes the Public Key of the SIOP used to sign
+    The Public Key of the SIOP was verified when the customer was onboarded by Happy Pets
+    For maximum privacy, SIOP (customer) can have a different key for each company where she is a customer
+    In each onboarding process the SIOP can generate a different key pair (pairwise DIDs)
+end note
+packetDelivery->packetDelivery: Create Access Token\n<Access Token>
+note over packetDelivery
+    Packet delivery Co creates an access token to send to the wallet for
+    further access to services
+end note
+packetDelivery-->siop : HTTP 200
+deactivate siop
+
+packetDelivery-->packetDeliveryPortal --++: <Access Token>
+note over packetDelivery
+    The Proxy notifies the Portal to refresh the login page so
+    it can present the services to the customer
+end note
+
+
+note over primeCustomer, packetDeliveryPortal
+    At this point, Packet Delivery Co knows:
+        1. That Happy Pets belongs to Data Space
+        2. That Happy Pets is a Trusted Issuer of EmployeeCredentials
+        3. That happy Pets says that the user is a customer
+        4. The category of customer (Normal/Gold)
+        5. Any user info encoded into the VC, like customer id
+end note
+
+'Display the services available to the customer
+primeCustomer<--packetDeliveryPortal:Services?
+primeCustomer->packetDeliveryPortal:Change PTA on delivery order
+
+'The customers selects to change the PTA
+packetDeliveryPortal->packetDelivery --++: Change PTA on order\nPATCH /pta\n <Access Token>
+
+packetDelivery->packetDelivery: Validate JWS and certificate 
+
+'Check policies for this customer
+packetDelivery->par ++:POST /delegation\n <Access Token>\n  (request HappyPets policy)
+par->packetDelivery --:HappyPets policy
+
+packetDelivery->packetDelivery: Is HappyPets allowed to\ndelegate policy to customer?
+packetDelivery-->packetDeliveryPortal --++:Change confirmed\n  Request forwarded to\nContext Broker (not shown)
+
+packetDeliveryPortal-->primeCustomer --:Change confirmed
+
+@enduml
