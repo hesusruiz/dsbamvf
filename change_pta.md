@@ -1,1 +1,1 @@
-![](images/vc_change_pta_new.png)
+![](images/vc_change_pta_new.svg)

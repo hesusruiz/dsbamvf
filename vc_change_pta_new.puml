@@ -37,7 +37,7 @@ group Authentication
         the Packet Delivery Portal displays a QR.
         The QR includes a nonce called <state> that
         will be used by Packet Delivery system to match the
-        start with the end of the login process
+        start with the end of the login process, seen here [[https://www.google.com Click here]]
     end note
     packetDeliveryPortal->customerBrowser --++: Display QR including endpoint URL + <state>
     customerBrowser-->customerSIOP --++: Scan QR
