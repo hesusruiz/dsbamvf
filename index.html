@@ -518,7 +518,7 @@ Authorization: Bearer [the access token]</code></pre>
     proxy_set_header X-Original-URI $request_uri;
 }
 
-location /[external address of Respource Server] {
+location /[external path of Resource Server] {
    auth_request /auth;
    proxy_pass [internal address of Resource Server]
 }</code></pre>
