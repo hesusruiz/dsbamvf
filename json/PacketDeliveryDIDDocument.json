@@ -1,0 +1,46 @@
+{
+  "payload": {
+    "@context": [
+      "https://www.w3.org/ns/did/v1",
+      "https://w3id.org/security/v1"
+    ],
+    "id": "did:elsi:packetdelivery",
+    "verificationMethod": [
+      {
+        "id": "did:elsi:packetdelivery#key-verification",
+        "type": "JwsVerificationKey2020",
+        "controller": "did:elsi:packetdelivery",
+        "publicKeyJwk": {
+          "kid": "key-verification",
+          "kty": "EC",
+          "crv": "secp256k1",
+          "x": "V8XptJkb5wplYkExcTF4nkyYVp7t5H5d5C4UPqCCM9c",
+          "y": "kn3nSPxIIvd9iaG0N4v14ceuo8E4PcLXhhGeDzCE7VM"
+        }
+      }
+    ],
+    "service": [
+      {
+        "id": "did:elsi:packetdelivery#info",
+        "type": "EntityCommercialInfo",
+        "serviceEndpoint": "https://www.packetdelivery.com/info",
+        "name": "Packet Delivery co."
+      },
+      {
+        "id": "did:elsi:packetdelivery#sms",
+        "type": "SecureMessagingService",
+        "serviceEndpoint": "https://www.packetdelivery.com/api/securemessage"
+      }
+    ],
+    "anchors": [
+      {
+        "id": "redt.alastria",
+        "resolution": "UniversalResolver",
+        "domain": "packetdelivery.ala",
+        "ethereumAddress": "0xbcB9b29eeb28f36fd84f1CfF98C3F1887D831d78"
+      }
+    ],
+    "created": "2021-11-14T13:02:37Z",
+    "updated": "2021-11-14T13:02:37Z"
+  }
+}

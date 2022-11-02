@@ -1,0 +1,28 @@
+{
+   "id": "EmployeePresentationDefinition",
+   "input_descriptors": [
+       {
+           "id": "employee credential",
+           "format": {
+               "ldp_vc": {
+                   "proof_type": [
+                       "Ed25519Signature2018"
+                   ]
+               }
+           },
+           "constraints": {
+               "fields": [
+                   {
+                       "path": [
+                           "$.type"
+                       ],
+                       "filter": {
+                           "type": "string",
+                           "pattern": "EmployeeCredential"
+                       }
+                   }
+               ]
+           }
+       }
+   ]
+}

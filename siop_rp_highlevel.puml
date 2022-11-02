@@ -1,0 +1,24 @@
+@startuml oidc4vp-presentation-exchange-high-level
+
+title OIDC SIOP V2 - Verifiable Presentation Exchange
+
+actor "End User" as user
+participant "Self-issued OP\n(SIOP)" as op
+participant "Relying Party\n(RP)" as rp
+
+autonumber 1.1
+
+== Trigger the Verifiable Presentation exchange ==
+
+user -> rp: Visit RP's website
+user -> rp: Perform action that triggers VP exchange
+
+autonumber inc A
+
+== Verifiable Presentation exchange ==
+
+rp -> op: Self-issued OpenID Provider Request\n(Authentication Request)
+op -> user: AuthN & AuthZ
+rp <- op: Self-issued OpenID Provider Response\n(Authentication Response)
+
+@enduml

@@ -2,6 +2,18 @@
     "plantuml.diagramsRoot": ".",
     "plantuml.exportOutDir": "images",
     "plantuml.exportFormat": "svg",
-    "plantuml.render": "PlantUMLServer",
-    "plantuml.server": "https://www.plantuml.com/plantuml"
+    "plantuml.render": "Local",
+    "plantuml.server": "",
+    "plantuml.exportMapFile": false,
+   "editor.tabSize": 3,
+   "rewrap.reformat": false,
+   "html.autoClosingTags": true,
+   "html.autoCreateQuotes": true,
+   "html.format.extraLiners": "head, body, /html, li",
+   "editor.wordWrap": "bounded",
+   "editor.wrappingIndent": "same",
+   "html.format.wrapLineLength": 0,
+   "html.format.unformatted": "",
+   "html.format.wrapAttributesIndentSize": 0,
+   "html.format.wrapAttributes": "preserve"
 }

@@ -1,0 +1,28 @@
+{
+   "id": "CustomerPresentationDefinition",
+   "input_descriptors": [
+       {
+           "id": "customer credential",
+           "format": {
+               "ldp_vc": {
+                   "proof_type": [
+                       "Ed25519Signature2018"
+                   ]
+               }
+           },
+           "constraints": {
+               "fields": [
+                   {
+                       "path": [
+                           "$.type"
+                       ],
+                       "filter": {
+                           "type": "string",
+                           "pattern": "CustomerCredential"
+                       }
+                   }
+               ]
+           }
+       }
+   ]
+}

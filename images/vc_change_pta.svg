@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="3399px" preserveAspectRatio="none" style="width:1619px;height:3399px;background:#FFFFFF;" version="1.1" viewBox="0 0 1619 3399" width="1619px" zoomAndPan="magnify"><defs/><g><rect fill="none" height="27.6094" id="_title" style="stroke:none;stroke-width:1.0;" width="370" x="626.25" y="10"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="360" x="631.25" y="29.5332">Packet Delivery - HappyPets customer changes PTA</text><rect fill="#FFE4E1" height="3342.1172" style="stroke:none;stroke-width:0.5;" width="429" x="90" y="44.6094"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="28" x="288.5" y="58.1045">User</text><rect fill="#EBFCEF" height="3342.1172" style="stroke:none;stroke-width:0.5;" width="958" x="649.5" y="44.6094"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="95" x="1079" y="58.1045">PacketDelivery</text><rect fill="#FFFFFF" height="262.9219" style="stroke:#181818;stroke-width:1.0;" width="10" x="47" y="800.2266"/><rect fill="#FFFFFF" height="957.7656" style="stroke:#181818;stroke-width:1.0;" width="10" x="243.5" y="475.0078"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="472.5" y="196.1406"/><rect fill="#FFFFFF" height="55.7031" style="stroke:#181818;stroke-width:1.0;" width="10" x="472.5" y="256.8438"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="472.5" y="444.6563"/><rect fill="#FFFFFF" height="63.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="472.5" y="2563.0547"/><rect fill="#FFFFFF" height="228.1641" style="stroke:#181818;stroke-width:1.0;" width="10" x="700.5" y="2626.1094"/><rect fill="#FFFFFF" height="63.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="700.5" y="3090.4375"/><rect fill="#FFFFFF" height="126.4063" style="stroke:#181818;stroke-width:1.0;" width="10" x="841.5" y="558.0625"/><rect fill="#FFFFFF" height="700.5469" style="stroke:#181818;stroke-width:1.0;" width="10" x="841.5" y="1432.7734"/><rect fill="#FFFFFF" height="164.8125" style="stroke:#181818;stroke-width:1.0;" width="10" x="1034.5" y="1548.5313"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="1152.5" y="226.4922"/><rect fill="#FFFFFF" height="132.1094" style="stroke:#181818;stroke-width:1.0;" width="10" x="1152.5" y="312.5469"/><rect fill="#FFFFFF" height="429.7344" style="stroke:#181818;stroke-width:1.0;" width="10" x="1152.5" y="2133.3203"/><rect fill="#FFFFFF" height="106.4063" style="stroke:#181818;stroke-width:1.0;" width="10" x="1152.5" y="3153.4922"/><rect fill="#FFFFFF" height="99.4063" style="stroke:#181818;stroke-width:1.0;" width="10" x="1352.5" y="2854.2734"/><rect fill="#FFFFFF" height="106.4063" style="stroke:#181818;stroke-width:1.0;" width="10" x="1352.5" y="2984.0313"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="1542.5" y="2953.6797"/><rect fill="none" height="2020.2891" style="stroke:#000000;stroke-width:1.5;" width="1213.5" x="10" y="271.8438"/><rect fill="none" height="761.8984" style="stroke:#000000;stroke-width:1.5;" width="1183.5" x="430" y="2506"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="52" x2="52" y1="163.7891" y2="3284.8984"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="147" x2="147" y1="163.7891" y2="3284.8984"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="248" x2="248" y1="163.7891" y2="3284.8984"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="477" x2="477" y1="163.7891" y2="3284.8984"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="705.5" x2="705.5" y1="163.7891" y2="3284.8984"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="846.5" x2="846.5" y1="163.7891" y2="3284.8984"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1039.5" x2="1039.5" y1="163.7891" y2="3284.8984"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1157.5" x2="1157.5" y1="163.7891" y2="3284.8984"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1357.5" x2="1357.5" y1="163.7891" y2="3284.8984"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1547.5" x2="1547.5" y1="163.7891" y2="3284.8984"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="20" y="143.1035">Universal</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="21" y="160.7129">Resolver</text><path d="M34,92.5703 C34,82.5703 52,82.5703 52,82.5703 C52,82.5703 70,82.5703 70,92.5703 L70,118.5703 C70,128.5703 52,128.5703 52,128.5703 C52,128.5703 34,128.5703 34,118.5703 L34,92.5703 " fill="#E2E2F0" style="stroke:#181818;stroke-width:1.5;"/><path d="M34,92.5703 C34,102.5703 52,102.5703 52,102.5703 C52,102.5703 70,102.5703 70,92.5703 " fill="none" style="stroke:#181818;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="20" y="3298.4316">Universal</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="21" y="3316.041">Resolver</text><path d="M34,3329.1172 C34,3319.1172 52,3319.1172 52,3319.1172 C52,3319.1172 70,3319.1172 70,3329.1172 L70,3355.1172 C70,3365.1172 52,3365.1172 52,3365.1172 C52,3365.1172 34,3365.1172 34,3355.1172 L34,3329.1172 " fill="#E2E2F0" style="stroke:#181818;stroke-width:1.5;"/><path d="M34,3329.1172 C34,3339.1172 52,3339.1172 52,3339.1172 C52,3339.1172 70,3339.1172 70,3329.1172 " fill="none" style="stroke:#181818;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="94" y="160.7129">Prime Customer</text><ellipse cx="147.5" cy="94.6797" fill="#F7A6A6" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M147.5,102.6797 L147.5,129.6797 M134.5,110.6797 L160.5,110.6797 M147.5,129.6797 L134.5,144.6797 M147.5,129.6797 L160.5,144.6797 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="94" y="3298.4316">Prime Customer</text><ellipse cx="147.5" cy="3310.0078" fill="#F7A6A6" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M147.5,3318.0078 L147.5,3345.0078 M134.5,3326.0078 L160.5,3326.0078 M147.5,3345.0078 L134.5,3360.0078 M147.5,3345.0078 L160.5,3360.0078 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#F7A6A6" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="75" x="211" y="113.5703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="218" y="135.1035">Customer</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="232.5" y="152.7129">SIOP</text><rect fill="#F7A6A6" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="75" x="211" y="3283.8984"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="218" y="3305.4316">Customer</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="232.5" y="3323.041">SIOP</text><rect fill="#F7A6A6" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="75" x="440" y="113.5703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="447" y="135.1035">Customer</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51" x="452" y="152.7129">Browser</text><rect fill="#F7A6A6" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="75" x="440" y="3283.8984"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="447" y="3305.4316">Customer</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51" x="452" y="3323.041">Browser</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="653.5" y="143.1035">Packet Delivery</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="689" y="160.7129">PEP</text><path d="M685,100.5703 L685,124.5703 M685,112.5703 L702,112.5703 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="714" cy="112.5703" fill="#92E8C6" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="653.5" y="3298.4316">Packet Delivery</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="689" y="3316.041">PEP</text><path d="M685,3323.1172 L685,3347.1172 M685,3335.1172 L702,3335.1172 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="714" cy="3335.1172" fill="#92E8C6" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#92E8C6" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="790.5" y="113.5703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="797.5" y="135.1035">Packet Delivery</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="19" x="837" y="152.7129">RP</text><rect fill="#92E8C6" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="790.5" y="3283.8984"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="797.5" y="3305.4316">Packet Delivery</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="19" x="837" y="3323.041">RP</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="987.5" y="125.4941">Packet Delivery</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="1007.5" y="143.1035">Universal</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="1008.5" y="160.7129">Resolver</text><path d="M1021.5,74.9609 C1021.5,64.9609 1039.5,64.9609 1039.5,64.9609 C1039.5,64.9609 1057.5,64.9609 1057.5,74.9609 L1057.5,100.9609 C1057.5,110.9609 1039.5,110.9609 1039.5,110.9609 C1039.5,110.9609 1021.5,110.9609 1021.5,100.9609 L1021.5,74.9609 " fill="#92E8C6" style="stroke:#181818;stroke-width:1.5;"/><path d="M1021.5,74.9609 C1021.5,84.9609 1039.5,84.9609 1039.5,84.9609 C1039.5,84.9609 1057.5,84.9609 1057.5,74.9609 " fill="none" style="stroke:#181818;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="987.5" y="3298.4316">Packet Delivery</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="1007.5" y="3316.041">Universal</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="1008.5" y="3333.6504">Resolver</text><path d="M1021.5,3346.7266 C1021.5,3336.7266 1039.5,3336.7266 1039.5,3336.7266 C1039.5,3336.7266 1057.5,3336.7266 1057.5,3346.7266 L1057.5,3372.7266 C1057.5,3382.7266 1039.5,3382.7266 1039.5,3382.7266 C1039.5,3382.7266 1021.5,3382.7266 1021.5,3372.7266 L1021.5,3346.7266 " fill="#92E8C6" style="stroke:#181818;stroke-width:1.5;"/><path d="M1021.5,3346.7266 C1021.5,3356.7266 1039.5,3356.7266 1039.5,3356.7266 C1039.5,3356.7266 1057.5,3356.7266 1057.5,3346.7266 " fill="none" style="stroke:#181818;stroke-width:1.5;"/><rect fill="#92E8C6" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="1101.5" y="113.5703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="1108.5" y="135.1035">Packet Delivery</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="1139" y="152.7129">Portal</text><rect fill="#92E8C6" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="1101.5" y="3283.8984"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="1108.5" y="3305.4316">Packet Delivery</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="1139" y="3323.041">Portal</text><rect fill="#92E8C6" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="1301.5" y="113.5703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="1308.5" y="135.1035">Packet Delivery</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="28" x="1343.5" y="152.7129">PDP</text><rect fill="#92E8C6" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="1301.5" y="3283.8984"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="1308.5" y="3305.4316">Packet Delivery</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="28" x="1343.5" y="3323.041">PDP</text><rect fill="#92E8C6" height="66.8281" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="1491.5" y="95.9609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="1498.5" y="117.4941">Packet Delivery</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="1506" y="135.1035">Authorisation</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="1521.5" y="152.7129">Registry</text><rect fill="#92E8C6" height="66.8281" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="1491.5" y="3283.8984"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="1498.5" y="3305.4316">Packet Delivery</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="1506" y="3323.041">Authorisation</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="1521.5" y="3340.6504">Registry</text><rect fill="#FFFFFF" height="262.9219" style="stroke:#181818;stroke-width:1.0;" width="10" x="47" y="800.2266"/><rect fill="#FFFFFF" height="957.7656" style="stroke:#181818;stroke-width:1.0;" width="10" x="243.5" y="475.0078"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="472.5" y="196.1406"/><rect fill="#FFFFFF" height="55.7031" style="stroke:#181818;stroke-width:1.0;" width="10" x="472.5" y="256.8438"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="472.5" y="444.6563"/><rect fill="#FFFFFF" height="63.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="472.5" y="2563.0547"/><rect fill="#FFFFFF" height="228.1641" style="stroke:#181818;stroke-width:1.0;" width="10" x="700.5" y="2626.1094"/><rect fill="#FFFFFF" height="63.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="700.5" y="3090.4375"/><rect fill="#FFFFFF" height="126.4063" style="stroke:#181818;stroke-width:1.0;" width="10" x="841.5" y="558.0625"/><rect fill="#FFFFFF" height="700.5469" style="stroke:#181818;stroke-width:1.0;" width="10" x="841.5" y="1432.7734"/><rect fill="#FFFFFF" height="164.8125" style="stroke:#181818;stroke-width:1.0;" width="10" x="1034.5" y="1548.5313"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="1152.5" y="226.4922"/><rect fill="#FFFFFF" height="132.1094" style="stroke:#181818;stroke-width:1.0;" width="10" x="1152.5" y="312.5469"/><rect fill="#FFFFFF" height="429.7344" style="stroke:#181818;stroke-width:1.0;" width="10" x="1152.5" y="2133.3203"/><rect fill="#FFFFFF" height="106.4063" style="stroke:#181818;stroke-width:1.0;" width="10" x="1152.5" y="3153.4922"/><rect fill="#FFFFFF" height="99.4063" style="stroke:#181818;stroke-width:1.0;" width="10" x="1352.5" y="2854.2734"/><rect fill="#FFFFFF" height="106.4063" style="stroke:#181818;stroke-width:1.0;" width="10" x="1352.5" y="2984.0313"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="1542.5" y="2953.6797"/><polygon fill="#181818" points="460.5,192.1406,470.5,196.1406,460.5,200.1406,464.5,196.1406" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="147.5" x2="466.5" y1="196.1406" y2="196.1406"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="154.5" y="191.2842">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="80" x="165.5" y="191.2842">Access portal</text><polygon fill="#181818" points="1140.5,222.4922,1150.5,226.4922,1140.5,230.4922,1144.5,226.4922" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="477.5" x2="1146.5" y1="226.4922" y2="226.4922"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="484.5" y="221.6357">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="94" x="495.5" y="221.6357">Accesses portal</text><polygon fill="#181818" points="493.5,252.8438,483.5,256.8438,493.5,260.8438,489.5,256.8438" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="487.5" x2="1156.5" y1="256.8438" y2="256.8438"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="499.5" y="251.9873">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="157" x="510.5" y="251.9873">Please select login method</text><path d="M10,271.8438 L147,271.8438 L147,280.1953 L137,290.1953 L10,290.1953 L10,271.8438 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="2020.2891" style="stroke:#000000;stroke-width:1.5;" width="1213.5" x="10" y="271.8438"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="92" x="25" y="286.3389">Authentication</text><polygon fill="#181818" points="1140.5,308.5469,1150.5,312.5469,1140.5,316.5469,1144.5,312.5469" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="477.5" x2="1146.5" y1="312.5469" y2="312.5469"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="484.5" y="307.6904">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="495.5" y="307.6904">Select "Login with VC"</text><path d="M482,325.5469 L482,416.5469 L832,416.5469 L832,335.5469 L822,325.5469 L482,325.5469 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M822,325.5469 L822,335.5469 L832,335.5469 L822,325.5469 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="329" x="488" y="344.042">When customer selects "Login with Verifiable Credential"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="240" x="488" y="360.3936">the Packet Delivery Portal displays a QR.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="259" x="488" y="376.7451">The QR includes a nonce called &lt;state&gt; that</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="304" x="488" y="393.0967">will be used by Packet Delivery system to match the</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="217" x="488" y="409.4482">start with the end of the login process</text><polygon fill="#181818" points="493.5,440.6563,483.5,444.6563,493.5,448.6563,489.5,444.6563" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="487.5" x2="1156.5" y1="444.6563" y2="444.6563"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="499.5" y="439.7998">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="264" x="510.5" y="439.7998">Display QR including endpoint URL + &lt;state&gt;</text><polygon fill="#181818" points="264.5,471.0078,254.5,475.0078,264.5,479.0078,260.5,475.0078" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="258.5" x2="476.5" y1="475.0078" y2="475.0078"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="270.5" y="470.1514">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53" x="281.5" y="470.1514">Scan QR</text><path d="M36,488.0078 L36,530.0078 L461,530.0078 L461,498.0078 L451,488.0078 L36,488.0078 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M451,488.0078 L451,498.0078 L461,498.0078 L451,488.0078 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="404" x="42" y="506.5029">The customer uses its wallet to scan the QR in Packet Delivery Portal</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="341" x="42" y="522.8545">The wallet uses the URL inside the QR to start the process</text><polygon fill="#181818" points="829.5,554.0625,839.5,558.0625,829.5,562.0625,833.5,558.0625" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="253.5" x2="835.5" y1="558.0625" y2="558.0625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="260.5" y="553.2061">7</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="169" x="271.5" y="553.2061">GET /authentication-requests</text><path d="M711,571.0625 L711,597.0625 L981,597.0625 L981,581.0625 L971,571.0625 L711,571.0625 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M971,571.0625 L971,581.0625 L981,581.0625 L971,571.0625 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="249" x="717" y="589.5576">The SIOP authentication process is started</text><line style="stroke:#181818;stroke-width:1.0;" x1="851.5" x2="893.5" y1="641.1172" y2="641.1172"/><line style="stroke:#181818;stroke-width:1.0;" x1="893.5" x2="893.5" y1="641.1172" y2="654.1172"/><line style="stroke:#181818;stroke-width:1.0;" x1="852.5" x2="893.5" y1="654.1172" y2="654.1172"/><polygon fill="#181818" points="862.5,650.1172,852.5,654.1172,862.5,658.1172,858.5,654.1172" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="858.5" y="628.085">8</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="38" x="869.5" y="619.9092">Create</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="132" x="869.5" y="636.2607">Authenticaton Request</text><polygon fill="#181818" points="264.5,680.4688,254.5,684.4688,264.5,688.4688,260.5,684.4688" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="258.5" x2="845.5" y1="684.4688" y2="684.4688"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="270.5" y="679.6123">9</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="140" x="281.5" y="679.6123">URI + &lt;Request Token&gt;</text><path d="M258,697.4688 L258,739.4688 L718,739.4688 L718,707.4688 L708,697.4688 L258,697.4688 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M708,697.4688 L708,707.4688 L718,707.4688 L708,697.4688 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="439" x="264" y="715.9639">The Request Token contains the DID of Packet Delivery, among other things</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="266" x="264" y="732.3154">The URI is the standard SIOP URI for callback</text><polygon fill="#181818" points="68,796.2266,58,800.2266,68,804.2266,64,800.2266" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="62" x2="242.5" y1="800.2266" y2="800.2266"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="74" y="779.0186">10</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="84" x="92" y="762.667">Resolve DID of</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="104" x="92" y="779.0186">Packet Delivery in</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="146" x="92" y="795.3701">Trusted Participant List</text><path d="M62,813.2266 L62,1019.2266 L798,1019.2266 L798,823.2266 L788,813.2266 L62,813.2266 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M788,813.2266 L788,823.2266 L798,823.2266 L788,813.2266 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="518" x="68" y="831.7217">This is a Universal Resolver server, that receives a DID and resolves it to a DID Document.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="547" x="68" y="848.0732">The DID Document (as per W3C) contains relevant information about the entity owning the DID,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="63" x="68" y="864.4248">containing:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="361" x="68" y="880.7764">- The Public Key of the entity used to verify its digital signature</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="292" x="68" y="897.1279">- Status of the entity in the Trusted Participant List</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="68" y="913.4795"> </text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="649" x="68" y="929.8311">The DID Document is extensible, and can contain any public information which may be relevant for the use case.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="618" x="68" y="946.1826">The Universal Resolver server has to be operated by a trusted entity for the customer and for minimizing the</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="588" x="68" y="962.5342">required trust in the ecosystem there may be as many nodes as needed operated by different entities.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="473" x="68" y="978.8857">At least one of those trusted entities has to be configured in the wallet of the user.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="715" x="68" y="995.2373">FIWARE uses a Universal Resolver accessing a blockchain network where the Trusted Lists are managed, but Trusted Lists</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="400" x="68" y="1011.5889">can be implemented with any technology suitable for the ecosysmen.</text><polygon fill="#181818" points="231.5,1059.1484,241.5,1063.1484,231.5,1067.1484,235.5,1063.1484" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="52" x2="237.5" y1="1063.1484" y2="1063.1484"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="59" y="1050.1162">11</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="90" x="77" y="1041.9404">DID Document</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="10" x="171" y="1041.9404">of</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="110" x="77" y="1058.292">Packet Delivery Co</text><line style="stroke:#181818;stroke-width:1.0;" x1="253.5" x2="295.5" y1="1093.5" y2="1093.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="295.5" x2="295.5" y1="1093.5" y2="1106.5"/><line style="stroke:#181818;stroke-width:1.0;" x1="254.5" x2="295.5" y1="1106.5" y2="1106.5"/><polygon fill="#181818" points="264.5,1102.5,254.5,1106.5,264.5,1110.5,260.5,1106.5" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="260.5" y="1088.6436">12</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="172" x="278.5" y="1088.6436">Verify Authentication Request</text><path d="M258,1119.5 L258,1259.5 L850,1259.5 L850,1129.5 L840,1119.5 L258,1119.5 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M840,1119.5 L840,1129.5 L850,1129.5 L840,1119.5 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="108" x="264" y="1137.9951">The wallet checks:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="296" x="264" y="1154.3467">- the digital signature of the Authentication Request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="571" x="264" y="1170.6982">- that the DID inside the request matches the DID inside the DID Document from Universal Resolver</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="544" x="264" y="1187.0498">- any additional info inside the request against the DID Document, as required by the use case</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="264" y="1203.4014"> </text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="290" x="264" y="1219.7529">Now the wallet knows that Packet Delivery Co is a</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="538" x="264" y="1236.1045">trusted participant entity and that it signed the request and the request has not been modified</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="264" y="1252.4561">since it was signed.</text><line style="stroke:#181818;stroke-width:1.0;" x1="253.5" x2="295.5" y1="1304.0156" y2="1304.0156"/><line style="stroke:#181818;stroke-width:1.0;" x1="295.5" x2="295.5" y1="1304.0156" y2="1317.0156"/><line style="stroke:#181818;stroke-width:1.0;" x1="254.5" x2="295.5" y1="1317.0156" y2="1317.0156"/><polygon fill="#181818" points="264.5,1313.0156,254.5,1317.0156,264.5,1321.0156,260.5,1317.0156" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="260.5" y="1290.9834">13</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="187" x="278.5" y="1282.8076">Create Authentication Response</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="94" x="278.5" y="1299.1592">with &lt;vp_token&gt;</text><path d="M258,1330.0156 L258,1405.0156 L611,1405.0156 L611,1340.0156 L601,1330.0156 L258,1330.0156 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M601,1330.0156 L601,1340.0156 L611,1340.0156 L601,1330.0156 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="300" x="264" y="1348.5107">The wallet creates a SIOP Authentication Response</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="327" x="264" y="1364.8623">The vp_token includes one or more Verifiable Credentials</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="332" x="264" y="1381.2139">In this case there is only one Verifiable Credential, issued</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="177" x="264" y="1397.5654">by Happy Pets to its customer</text><polygon fill="#181818" points="829.5,1428.7734,839.5,1432.7734,829.5,1436.7734,833.5,1432.7734" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="248.5" x2="835.5" y1="1432.7734" y2="1432.7734"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="255.5" y="1427.917">14</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="288" x="273.5" y="1427.917">POST &lt;Authentication Response&gt; /siop-sessions</text><path d="M253,1445.7734 L253,1487.7734 L597,1487.7734 L597,1455.7734 L587,1445.7734 L253,1445.7734 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M587,1445.7734 L587,1455.7734 L597,1455.7734 L587,1445.7734 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="323" x="259" y="1464.2686">The URI to which the POST is done was specified in the</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="316" x="259" y="1480.6201">Authentication Request that was received by the wallet</text><polygon fill="#181818" points="1022.5,1544.5313,1032.5,1548.5313,1022.5,1552.5313,1026.5,1548.5313" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="851.5" x2="1028.5" y1="1548.5313" y2="1548.5313"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="858.5" y="1527.3232">15</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="84" x="876.5" y="1510.9717">Resolve DID of</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="82" x="876.5" y="1527.3232">Happy Pets in</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="146" x="876.5" y="1543.6748">Trusted Participant List</text><path d="M423,1561.5313 L423,1669.5313 L1029,1669.5313 L1029,1571.5313 L1019,1561.5313 L423,1561.5313 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M1019,1561.5313 L1019,1571.5313 L1029,1571.5313 L1019,1561.5313 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="544" x="429" y="1580.0264">This can be a Universal Resolver operated by Packet Delivery Co or by any entity trusted by it.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="395" x="429" y="1596.3779">For maximum level of trust, the node is operated by Packet Delivery.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="455" x="429" y="1612.7295">The Verifiable Credential received from the user was signed by Happy Pets and</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="185" x="429" y="1629.0811">includes the DID of Happy Pets.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="585" x="429" y="1645.4326">Packet Delivery retrieves the DID Document for that DID to check that it is a trusted participant entity.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="509" x="429" y="1661.7842">In addition it checks the digital signature using the Public Key inside the DID Document.</text><polygon fill="#181818" points="862.5,1709.3438,852.5,1713.3438,862.5,1717.3438,858.5,1713.3438" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="856.5" x2="1038.5" y1="1713.3438" y2="1713.3438"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="868.5" y="1700.3115">16</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="90" x="886.5" y="1692.1357">DID Document</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="86" x="886.5" y="1708.4873">with public key</text><line style="stroke:#181818;stroke-width:1.0;" x1="851.5" x2="893.5" y1="1760.0469" y2="1760.0469"/><line style="stroke:#181818;stroke-width:1.0;" x1="893.5" x2="893.5" y1="1760.0469" y2="1773.0469"/><line style="stroke:#181818;stroke-width:1.0;" x1="852.5" x2="893.5" y1="1773.0469" y2="1773.0469"/><polygon fill="#181818" points="862.5,1769.0469,852.5,1773.0469,862.5,1777.0469,858.5,1773.0469" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="858.5" y="1747.0146">17</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="876.5" y="1738.8389">Verify</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="145" x="876.5" y="1755.1904">Authentication Response</text><path d="M523,1786.0469 L523,1877.0469 L1170,1877.0469 L1170,1796.0469 L1160,1786.0469 L523,1786.0469 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M1160,1786.0469 L1160,1796.0469 L1170,1796.0469 L1160,1786.0469 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="573" x="529" y="1804.542">The VC issued by Happy Pets to the customer includes the Public Key associated to the customer</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="324" x="529" y="1820.8936">and that was used to sign the Authentication Response.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="551" x="529" y="1837.2451">The Public Key of the customer was verified when the customer was onboarded by Happy Pets.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="626" x="529" y="1853.5967">For maximum privacy, SIOP (customer) can have a different key for each company where she is a customer.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="500" x="529" y="1869.9482">In each onboarding process the SIOP can generate a different key pair (pairwise DIDs).</text><polygon fill="#181818" points="259.5,1901.1563,249.5,1905.1563,259.5,1909.1563,255.5,1905.1563" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="253.5" x2="840.5" y1="1905.1563" y2="1905.1563"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="265.5" y="1900.2998">18</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57" x="283.5" y="1900.2998">HTTP 200</text><path d="M253,1918.1563 L253,1993.1563 L685,1993.1563 L685,1928.1563 L675,1918.1563 L253,1918.1563 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M675,1918.1563 L675,1928.1563 L685,1928.1563 L675,1918.1563 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="345" x="259" y="1936.6514">The wallet receives the response to the POST indicating the</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="192" x="259" y="1953.0029">success or failure of the process.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="411" x="259" y="1969.3545">The web portal will refresh its content based on the information received</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="181" x="259" y="1985.7061">by the Packet Delivery system.</text><line style="stroke:#181818;stroke-width:1.0;" x1="851.5" x2="893.5" y1="2020.9141" y2="2020.9141"/><line style="stroke:#181818;stroke-width:1.0;" x1="893.5" x2="893.5" y1="2020.9141" y2="2033.9141"/><line style="stroke:#181818;stroke-width:1.0;" x1="852.5" x2="893.5" y1="2033.9141" y2="2033.9141"/><polygon fill="#181818" points="862.5,2029.9141,852.5,2033.9141,862.5,2037.9141,858.5,2033.9141" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="858.5" y="2016.0576">19</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="140" x="876.5" y="2016.0576">Generate Access Token</text><path d="M557,2046.9141 L557,2088.9141 L1136,2088.9141 L1136,2056.9141 L1126,2046.9141 L557,2046.9141 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M1126,2046.9141 L1126,2056.9141 L1136,2056.9141 L1126,2046.9141 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="558" x="563" y="2065.4092">The RP component generates an Access Token in JWT format signed by the RP component and</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="485" x="563" y="2081.7607">including the information of the Verifiable Credential needed to perform authorization.</text><polygon fill="#181818" points="1140.5,2129.3203,1150.5,2133.3203,1140.5,2137.3203,1144.5,2133.3203" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="846.5" x2="1146.5" y1="2133.3203" y2="2133.3203"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="853.5" y="2120.2881">20</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="204" x="871.5" y="2112.1123">Notify with Verifiable Credential and</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="45" x="871.5" y="2128.4639">&lt;state&gt;</text><path d="M578,2146.3203 L578,2286.3203 L1115,2286.3203 L1115,2156.3203 L1105,2146.3203 L578,2146.3203 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M1105,2146.3203 L1105,2156.3203 L1115,2156.3203 L1105,2146.3203 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="485" x="584" y="2164.8154">The RP component of Packet Delivery notifies the Portal to refresh the login page so</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="251" x="584" y="2181.167">it can present the services to the customer.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="218" x="584" y="2197.5186">The notification includes the following:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="516" x="584" y="2213.8701">- the &lt;state&gt; nonce that was generated by the portal when it generated the QR code. The</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="397" x="584" y="2230.2217">portal uses the &lt;state&gt; nonce to know what login session is notified.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="232" x="584" y="2246.5732">- The &lt;Access Token&gt; generated before</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="584" y="2262.9248"> </text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="319" x="584" y="2279.2764">The notification URL is configured in the RP component</text><path d="M578,2304.1328 L578,2493.1328 L1115,2493.1328 L1115,2314.1328 L1105,2304.1328 L578,2304.1328 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M1105,2304.1328 L1105,2314.1328 L1115,2314.1328 L1105,2304.1328 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="504" x="584" y="2322.6279">The authentication process has been finished and we still have to perform authorisation.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="213" x="584" y="2338.9795">At this point, Packet Delivery knows:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="281" x="596" y="2355.3311">1. That Happy Pets is a trusted participant entity</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="302" x="596" y="2371.6826">2. That happy Pets says that the user is a customer</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="246" x="596" y="2388.0342">3. The category of customer (Normal/Gold)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="313" x="596" y="2404.3857">4. Any user info encoded into the VC, like customer id</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="584" y="2420.7373"> </text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="457" x="584" y="2437.0889">However, Packet Delivery still does not know Happy Pets can issue credentials</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="516" x="584" y="2453.4404">of type Gold (and also Normal). We will check this when the customer chooses a specific</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="476" x="584" y="2469.792">service, which could be avaliable to all customers (Normal) or only Gold customers</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="584" y="2486.1436"> </text><path d="M430,2506 L559,2506 L559,2514.3516 L549,2524.3516 L430,2524.3516 L430,2506 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="761.8984" style="stroke:#000000;stroke-width:1.5;" width="1183.5" x="430" y="2506"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="84" x="445" y="2520.4951">Authorisation</text><polygon fill="#181818" points="493.5,2559.0547,483.5,2563.0547,493.5,2567.0547,489.5,2563.0547" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="487.5" x2="1156.5" y1="2563.0547" y2="2563.0547"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="499.5" y="2550.0225">21</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="320" x="517.5" y="2541.8467">Refresh the screen with services available to customers</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="169" x="517.5" y="2558.1982">and include &lt;Access Token&gt;</text><polygon fill="#181818" points="688.5,2622.1094,698.5,2626.1094,688.5,2630.1094,692.5,2626.1094" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="477.5" x2="694.5" y1="2626.1094" y2="2626.1094"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="484.5" y="2604.9014">22</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="102" x="502.5" y="2588.5498">Customer selects</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="181" x="502.5" y="2604.9014">"Change PTA" on delivery order</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="133" x="502.5" y="2621.2529">Send &lt;Access Token&gt;</text><path d="M452,2639.1094 L452,2681.1094 L959,2681.1094 L959,2649.1094 L949,2639.1094 L452,2639.1094 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M949,2639.1094 L949,2649.1094 L959,2649.1094 L949,2639.1094 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="344" x="458" y="2657.6045">The Policy Enforcement Point (PEP) intercepts request and</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="486" x="458" y="2673.9561">checks that the request includes an &lt;Access Token&gt; signed by Packet Delivery RP</text><line style="stroke:#181818;stroke-width:1.0;" x1="710.5" x2="752.5" y1="2725.5156" y2="2725.5156"/><line style="stroke:#181818;stroke-width:1.0;" x1="752.5" x2="752.5" y1="2725.5156" y2="2738.5156"/><line style="stroke:#181818;stroke-width:1.0;" x1="711.5" x2="752.5" y1="2738.5156" y2="2738.5156"/><polygon fill="#181818" points="721.5,2734.5156,711.5,2738.5156,721.5,2742.5156,717.5,2738.5156" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="717.5" y="2712.4834">23</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47" x="735.5" y="2704.3076">Validate</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="99" x="735.5" y="2720.6592">&lt;Access Token&gt;</text><path d="M513,2751.5156 L513,2810.5156 L898,2810.5156 L898,2761.5156 L888,2751.5156 L513,2751.5156 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M888,2751.5156 L888,2761.5156 L898,2761.5156 L888,2751.5156 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="265" x="519" y="2770.0107">The Policy Enforcement Point (PEP) asks the</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="364" x="519" y="2786.3623">Policy Decision Point (PDP) to evaluate if the &lt;Access Token&gt;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="354" x="519" y="2802.7139">authorizes caller to access the target service ("Change PTA")</text><polygon fill="#181818" points="1340.5,2850.2734,1350.5,2854.2734,1340.5,2858.2734,1344.5,2854.2734" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="705.5" x2="1346.5" y1="2854.2734" y2="2854.2734"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="712.5" y="2841.2412">24</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="279" x="730.5" y="2833.0654">Evaluate authorisation request for "Change PTA"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="126" x="730.5" y="2849.417">with &lt;Access Token&gt;</text><path d="M1145,2867.2734 L1145,2909.2734 L1569,2909.2734 L1569,2877.2734 L1559,2867.2734 L1145,2867.2734 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M1559,2867.2734 L1559,2877.2734 L1569,2877.2734 L1559,2867.2734 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="403" x="1151" y="2885.7686">Use information in &lt;Access Token&gt; to evaluate policies associated to</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="162" x="1151" y="2902.1201">customer roles in the token.</text><polygon fill="#181818" points="1530.5,2949.6797,1540.5,2953.6797,1530.5,2957.6797,1534.5,2953.6797" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1357.5" x2="1536.5" y1="2953.6797" y2="2953.6797"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1364.5" y="2940.6475">25</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="140" x="1382.5" y="2932.4717">Retrieve access policies</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="78" x="1382.5" y="2948.8232">from the PRP</text><polygon fill="#181818" points="1373.5,2980.0313,1363.5,2984.0313,1373.5,2988.0313,1369.5,2984.0313" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1367.5" x2="1546.5" y1="2984.0313" y2="2984.0313"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1379.5" y="2979.1748">26</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="86" x="1397.5" y="2979.1748">Return policies</text><line style="stroke:#181818;stroke-width:1.0;" x1="1362.5" x2="1404.5" y1="3047.0859" y2="3047.0859"/><line style="stroke:#181818;stroke-width:1.0;" x1="1404.5" x2="1404.5" y1="3047.0859" y2="3060.0859"/><line style="stroke:#181818;stroke-width:1.0;" x1="1363.5" x2="1404.5" y1="3060.0859" y2="3060.0859"/><polygon fill="#181818" points="1373.5,3056.0859,1363.5,3060.0859,1373.5,3064.0859,1369.5,3060.0859" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1369.5" y="3025.8779">27</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="127" x="1387.5" y="3009.5264">Evaluate authorisation</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="148" x="1387.5" y="3025.8779">of user evaluating policies</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="110" x="1387.5" y="3042.2295">associated to roles</text><polygon fill="#181818" points="721.5,3086.4375,711.5,3090.4375,721.5,3094.4375,717.5,3090.4375" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="715.5" x2="1356.5" y1="3090.4375" y2="3090.4375"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="727.5" y="3085.5811">28</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="123" x="745.5" y="3085.5811">Authorisation granted</text><polygon fill="#181818" points="1140.5,3149.4922,1150.5,3153.4922,1140.5,3157.4922,1144.5,3153.4922" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="705.5" x2="1146.5" y1="3153.4922" y2="3153.4922"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="712.5" y="3132.2842">29</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="142" x="730.5" y="3115.9326">Forward original request:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="171" x="730.5" y="3132.2842">Change PTA on delivery order</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="126" x="730.5" y="3148.6357">with &lt;Access Token&gt;</text><line style="stroke:#181818;stroke-width:1.0;" x1="1162.5" x2="1204.5" y1="3216.5469" y2="3216.5469"/><line style="stroke:#181818;stroke-width:1.0;" x1="1204.5" x2="1204.5" y1="3216.5469" y2="3229.5469"/><line style="stroke:#181818;stroke-width:1.0;" x1="1163.5" x2="1204.5" y1="3229.5469" y2="3229.5469"/><polygon fill="#181818" points="1173.5,3225.5469,1163.5,3229.5469,1173.5,3233.5469,1169.5,3229.5469" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="1169.5" y="3195.3389">30</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="91" x="1187.5" y="3178.9873">Perform change</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="1187.5" y="3195.3389">Request forwarded to</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="158" x="1187.5" y="3211.6904">Context Broker (not shown)</text><polygon fill="#181818" points="488.5,3255.8984,478.5,3259.8984,488.5,3263.8984,484.5,3259.8984" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="482.5" x2="1156.5" y1="3259.8984" y2="3259.8984"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="494.5" y="3255.042">31</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="104" x="512.5" y="3255.042">Change confirmed</text><!--MD5=[12680272cfce8923bcf6ac1009db2130]
+@startuml vc_change_pta
+
+title Packet Delivery - HappyPets customer changes PTA
+
+autonumber 1
+skinparam SequenceBoxBorderColor transparent
+
+database "Universal\nResolver" as DIDR
+
+box User #MistyRose
+    actor "Prime Customer" as primeCustomer #f7a6a6
+    participant "Customer\nSIOP" as customerSIOP #f7a6a6
+    participant "Customer\nBrowser" as customerBrowser #f7a6a6
+endbox
+
+box PacketDelivery #ebfcef
+    boundary "Packet Delivery\nPEP" as packetDeliveryPEP #92e8c6
+    participant "Packet Delivery\nRP" as packetDeliverySIOP #92e8c6
+    database "Packet Delivery\nUniversal\nResolver" as DIDR_pack #92e8c6
+    participant "Packet Delivery\nPortal" as packetDeliveryPortal #92e8c6
+    participant "Packet Delivery\nPDP" as packetDeliveryPDP #92e8c6
+    participant "Packet Delivery\nAuthorisation\nRegistry" as packetDeliveryAR #92e8c6
+endbox
+
+'Visit the Packet Delivery Portal and select logon method
+primeCustomer- ->customerBrowser ++: Access portal
+customerBrowser->packetDeliveryPortal - -++: Accesses portal
+packetDeliveryPortal->customerBrowser - -++: Please select login method
+
+group Authentication
+
+    'A QR code is displayed and scanned by the customer to start the login process.
+    'The QR code includes the URL of th eendpoint that will start the process when invoked by the SIOP
+    customerBrowser->packetDeliveryPortal - -++: Select "Login with VC"
+    note right customerBrowser
+        When customer selects "Login with Verifiable Credential"
+        the Packet Delivery Portal displays a QR.
+        The QR includes a nonce called <state> that
+        will be used by Packet Delivery system to match the
+        start with the end of the login process
+    end note
+    packetDeliveryPortal->customerBrowser - -++: Display QR including endpoint URL + <state>
+    customerBrowser- ->customerSIOP - -++: Scan QR
+
+    'Perform a GET to start the process
+    note over customerSIOP
+        The customer uses its wallet to scan the QR in Packet Delivery Portal
+        The wallet uses the URL inside the QR to start the process
+    end note
+    customerSIOP -> packetDeliverySIOP ++:GET /authentication-requests
+
+    note over packetDeliverySIOP: The SIOP authentication process is started
+    packetDeliverySIOP -> packetDeliverySIOP :Create\nAuthenticaton Request
+    return URI + <Request Token>
+    note right customerSIOP
+        The Request Token contains the DID of Packet Delivery, among other things
+        The URI is the standard SIOP URI for callback
+    end note
+
+    'Resolve the DID of Packet Delivery
+    customerSIOP -> DIDR ++: Resolve DID of\nPacket Delivery in\n**Trusted Participant List**
+    note right DIDR
+        This is a Universal Resolver server, that receives a DID and resolves it to a DID Document.
+        The DID Document (as per W3C) contains relevant information about the entity owning the DID,
+        containing:
+        - The Public Key of the entity used to verify its digital signature
+        - Status of the entity in the Trusted Participant List
+
+        The DID Document is extensible, and can contain any public information which may be relevant for the use case.
+        The Universal Resolver server has to be operated by a trusted entity for the customer and for minimizing the
+        required trust in the ecosystem there may be as many nodes as needed operated by different entities.
+        At least one of those trusted entities has to be configured in the wallet of the user.
+        FIWARE uses a Universal Resolver accessing a blockchain network where the Trusted Lists are managed, but Trusted Lists
+        can be implemented with any technology suitable for the ecosysmen.
+    end note 
+    return **DID Document** of\nPacket Delivery Co
+
+    'Verify the Authentication Request using the DID Document
+    customerSIOP -> customerSIOP: Verify Authentication Request
+    note right customerSIOP
+        The wallet checks:
+        - the digital signature of the Authentication Request
+        - that the DID inside the request matches the DID inside the DID Document from Universal Resolver
+        - any additional info inside the request against the DID Document, as required by the use case
+
+        Now the wallet knows that Packet Delivery Co is a
+        trusted participant entity and that it signed the request and the request has not been modified
+        since it was signed.
+    end note
+    customerSIOP -> customerSIOP: Create Authentication Response\nwith <vp_token>
+
+    note right customerSIOP
+        The wallet creates a SIOP Authentication Response
+        The vp_token includes one or more Verifiable Credentials
+        In this case there is only one Verifiable Credential, issued
+        by Happy Pets to its customer
+    end note
+    'Perform a POST to send the Authentication Response
+    customerSIOP -> packetDeliverySIOP - -++: POST <Authentication Response> /siop-sessions
+
+    note right customerSIOP
+        The URI to which the POST is done was specified in the
+        Authentication Request that was received by the wallet
+    end note
+
+    'Resolve DID of HappyPets to see if it is trusted issuer
+    packetDeliverySIOP->DIDR_pack ++: Resolve DID of\nHappy Pets in\n**Trusted Participant List**
+    note left DIDR_pack
+        This can be a Universal Resolver operated by Packet Delivery Co or by any entity trusted by it.
+        For maximum level of trust, the node is operated by Packet Delivery.
+        The Verifiable Credential received from the user was signed by Happy Pets and
+        includes the DID of Happy Pets.
+        Packet Delivery retrieves the DID Document for that DID to check that it is a trusted participant entity.
+        In addition it checks the digital signature using the Public Key inside the DID Document.
+    end note
+    return **DID Document**\nwith public key
+
+    'Verify the Authentication Response from the mobile wallet
+    packetDeliverySIOP->packetDeliverySIOP: Verify\nAuthentication Response
+    note over packetDeliverySIOP
+        The VC issued by Happy Pets to the customer includes the Public Key associated to the customer
+        and that was used to sign the Authentication Response.
+        The Public Key of the customer was verified when the customer was onboarded by Happy Pets.
+        For maximum privacy, SIOP (customer) can have a different key for each company where she is a customer.
+        In each onboarding process the SIOP can generate a different key pair (pairwise DIDs).
+    end note
+    packetDeliverySIOP->customerSIOP : HTTP 200
+    deactivate customerSIOP
+    note right customerSIOP
+        The wallet receives the response to the POST indicating the
+        success or failure of the process.
+        The web portal will refresh its content based on the information received
+        by the Packet Delivery system.
+    end note
+
+    'Generate an Access Token including the information in the Verifiable Credential
+    packetDeliverySIOP->packetDeliverySIOP : Generate Access Token
+    note over packetDeliverySIOP
+        The RP component generates an Access Token in JWT format signed by the RP component and
+        including the information of the Verifiable Credential needed to perform authorization.
+    end note
+
+    'Notify the portal so it refreshes the login page with services available to the customer
+    packetDeliverySIOP- ->packetDeliveryPortal - -++: Notify with Verifiable Credential and\n<state>
+    note over packetDeliverySIOP
+        The RP component of Packet Delivery notifies the Portal to refresh the login page so
+        it can present the services to the customer.
+        The notification includes the following:
+        - the <state> nonce that was generated by the portal when it generated the QR code. The
+        portal uses the <state> nonce to know what login session is notified.
+        - The <Access Token> generated before
+
+        The notification URL is configured in the RP component
+    end note
+
+end group
+
+note over packetDeliverySIOP
+   The authentication process has been finished and we still have to perform authorisation.
+   At this point, Packet Delivery knows:
+      1. That Happy Pets is a trusted participant entity
+      2. That happy Pets says that the user is a customer
+      3. The category of customer (Normal/Gold)
+      4. Any user info encoded into the VC, like customer id
+
+   However, Packet Delivery still does not know Happy Pets can issue credentials
+   of type Gold (and also Normal). We will check this when the customer chooses a specific
+   service, which could be avaliable to all customers (Normal) or only Gold customers
+
+end note
+
+
+group Authorisation
+
+    packetDeliveryPortal- ->customerBrowser - -++: Refresh the screen with services available to customers\nand include <Access Token>
+
+    'The customer selects to change the PTA
+    customerBrowser->packetDeliveryPEP - -++: Customer selects\n"Change PTA" on delivery order\nSend <Access Token>
+    note over packetDeliveryPEP
+        The Policy Enforcement Point (PEP) intercepts request and
+        checks that the request includes an <Access Token> signed by Packet Delivery RP
+    end note
+    packetDeliveryPEP->packetDeliveryPEP: Validate\n<Access Token>
+    note over packetDeliveryPEP
+        The Policy Enforcement Point (PEP) asks the
+        Policy Decision Point (PDP) to evaluate if the <Access Token>
+        authorizes caller to access the target service ("Change PTA")
+    end note
+
+    packetDeliveryPEP->packetDeliveryPDP - -++: Evaluate authorisation request for "Change PTA"\nwith <Access Token>
+
+    note over packetDeliveryPDP
+        Use information in <Access Token> to evaluate policies associated to
+        customer roles in the token.
+    end note
+    'Check policies for this customer
+    packetDeliveryPDP->packetDeliveryAR - -++: Retrieve access policies\nfrom the PRP
+    packetDeliveryAR->packetDeliveryPDP - -++: Return policies
+    packetDeliveryPDP->packetDeliveryPDP : Evaluate authorisation\nof user evaluating policies\nassociated to roles
+
+    packetDeliveryPDP->packetDeliveryPEP - -++:Authorisation granted
+    packetDeliveryPEP->packetDeliveryPortal - -++:Forward original request:\nChange PTA on delivery order\nwith <Access Token>
+
+    packetDeliveryPortal->packetDeliveryPortal: Perform change\nRequest forwarded to\nContext Broker (not shown)
+    packetDeliveryPortal->customerBrowser - -:Change confirmed
+
+end group
+
+@enduml
+
+@startuml vc_change_pta
+
+title Packet Delivery - HappyPets customer changes PTA
+
+autonumber 1
+skinparam SequenceBoxBorderColor transparent
+
+database "Universal\nResolver" as DIDR
+
+box User #MistyRose
+    actor "Prime Customer" as primeCustomer #f7a6a6
+    participant "Customer\nSIOP" as customerSIOP #f7a6a6
+    participant "Customer\nBrowser" as customerBrowser #f7a6a6
+endbox
+
+box PacketDelivery #ebfcef
+    boundary "Packet Delivery\nPEP" as packetDeliveryPEP #92e8c6
+    participant "Packet Delivery\nRP" as packetDeliverySIOP #92e8c6
+    database "Packet Delivery\nUniversal\nResolver" as DIDR_pack #92e8c6
+    participant "Packet Delivery\nPortal" as packetDeliveryPortal #92e8c6
+    participant "Packet Delivery\nPDP" as packetDeliveryPDP #92e8c6
+    participant "Packet Delivery\nAuthorisation\nRegistry" as packetDeliveryAR #92e8c6
+endbox
+
+primeCustomer- ->customerBrowser ++: Access portal
+customerBrowser->packetDeliveryPortal - -++: Accesses portal
+packetDeliveryPortal->customerBrowser - -++: Please select login method
+
+group Authentication
+
+    customerBrowser->packetDeliveryPortal - -++: Select "Login with VC"
+    note right customerBrowser
+        When customer selects "Login with Verifiable Credential"
+        the Packet Delivery Portal displays a QR.
+        The QR includes a nonce called <state> that
+        will be used by Packet Delivery system to match the
+        start with the end of the login process
+    end note
+    packetDeliveryPortal->customerBrowser - -++: Display QR including endpoint URL + <state>
+    customerBrowser- ->customerSIOP - -++: Scan QR
+
+    note over customerSIOP
+        The customer uses its wallet to scan the QR in Packet Delivery Portal
+        The wallet uses the URL inside the QR to start the process
+    end note
+    customerSIOP -> packetDeliverySIOP ++:GET /authentication-requests
+
+    note over packetDeliverySIOP: The SIOP authentication process is started
+    packetDeliverySIOP -> packetDeliverySIOP :Create\nAuthenticaton Request
+    return URI + <Request Token>
+    note right customerSIOP
+        The Request Token contains the DID of Packet Delivery, among other things
+        The URI is the standard SIOP URI for callback
+    end note
+
+    customerSIOP -> DIDR ++: Resolve DID of\nPacket Delivery in\n**Trusted Participant List**
+    note right DIDR
+        This is a Universal Resolver server, that receives a DID and resolves it to a DID Document.
+        The DID Document (as per W3C) contains relevant information about the entity owning the DID,
+        containing:
+        - The Public Key of the entity used to verify its digital signature
+        - Status of the entity in the Trusted Participant List
+
+        The DID Document is extensible, and can contain any public information which may be relevant for the use case.
+        The Universal Resolver server has to be operated by a trusted entity for the customer and for minimizing the
+        required trust in the ecosystem there may be as many nodes as needed operated by different entities.
+        At least one of those trusted entities has to be configured in the wallet of the user.
+        FIWARE uses a Universal Resolver accessing a blockchain network where the Trusted Lists are managed, but Trusted Lists
+        can be implemented with any technology suitable for the ecosysmen.
+    end note 
+    return **DID Document** of\nPacket Delivery Co
+
+    customerSIOP -> customerSIOP: Verify Authentication Request
+    note right customerSIOP
+        The wallet checks:
+        - the digital signature of the Authentication Request
+        - that the DID inside the request matches the DID inside the DID Document from Universal Resolver
+        - any additional info inside the request against the DID Document, as required by the use case
+
+        Now the wallet knows that Packet Delivery Co is a
+        trusted participant entity and that it signed the request and the request has not been modified
+        since it was signed.
+    end note
+    customerSIOP -> customerSIOP: Create Authentication Response\nwith <vp_token>
+
+    note right customerSIOP
+        The wallet creates a SIOP Authentication Response
+        The vp_token includes one or more Verifiable Credentials
+        In this case there is only one Verifiable Credential, issued
+        by Happy Pets to its customer
+    end note
+    customerSIOP -> packetDeliverySIOP - -++: POST <Authentication Response> /siop-sessions
+
+    note right customerSIOP
+        The URI to which the POST is done was specified in the
+        Authentication Request that was received by the wallet
+    end note
+
+    packetDeliverySIOP->DIDR_pack ++: Resolve DID of\nHappy Pets in\n**Trusted Participant List**
+    note left DIDR_pack
+        This can be a Universal Resolver operated by Packet Delivery Co or by any entity trusted by it.
+        For maximum level of trust, the node is operated by Packet Delivery.
+        The Verifiable Credential received from the user was signed by Happy Pets and
+        includes the DID of Happy Pets.
+        Packet Delivery retrieves the DID Document for that DID to check that it is a trusted participant entity.
+        In addition it checks the digital signature using the Public Key inside the DID Document.
+    end note
+    return **DID Document**\nwith public key
+
+    packetDeliverySIOP->packetDeliverySIOP: Verify\nAuthentication Response
+    note over packetDeliverySIOP
+        The VC issued by Happy Pets to the customer includes the Public Key associated to the customer
+        and that was used to sign the Authentication Response.
+        The Public Key of the customer was verified when the customer was onboarded by Happy Pets.
+        For maximum privacy, SIOP (customer) can have a different key for each company where she is a customer.
+        In each onboarding process the SIOP can generate a different key pair (pairwise DIDs).
+    end note
+    packetDeliverySIOP->customerSIOP : HTTP 200
+    deactivate customerSIOP
+    note right customerSIOP
+        The wallet receives the response to the POST indicating the
+        success or failure of the process.
+        The web portal will refresh its content based on the information received
+        by the Packet Delivery system.
+    end note
+
+    packetDeliverySIOP->packetDeliverySIOP : Generate Access Token
+    note over packetDeliverySIOP
+        The RP component generates an Access Token in JWT format signed by the RP component and
+        including the information of the Verifiable Credential needed to perform authorization.
+    end note
+
+    packetDeliverySIOP- ->packetDeliveryPortal - -++: Notify with Verifiable Credential and\n<state>
+    note over packetDeliverySIOP
+        The RP component of Packet Delivery notifies the Portal to refresh the login page so
+        it can present the services to the customer.
+        The notification includes the following:
+        - the <state> nonce that was generated by the portal when it generated the QR code. The
+        portal uses the <state> nonce to know what login session is notified.
+        - The <Access Token> generated before
+
+        The notification URL is configured in the RP component
+    end note
+
+end group
+
+note over packetDeliverySIOP
+   The authentication process has been finished and we still have to perform authorisation.
+   At this point, Packet Delivery knows:
+      1. That Happy Pets is a trusted participant entity
+      2. That happy Pets says that the user is a customer
+      3. The category of customer (Normal/Gold)
+      4. Any user info encoded into the VC, like customer id
+
+   However, Packet Delivery still does not know Happy Pets can issue credentials
+   of type Gold (and also Normal). We will check this when the customer chooses a specific
+   service, which could be avaliable to all customers (Normal) or only Gold customers
+
+end note
+
+
+group Authorisation
+
+    packetDeliveryPortal- ->customerBrowser - -++: Refresh the screen with services available to customers\nand include <Access Token>
+
+    customerBrowser->packetDeliveryPEP - -++: Customer selects\n"Change PTA" on delivery order\nSend <Access Token>
+    note over packetDeliveryPEP
+        The Policy Enforcement Point (PEP) intercepts request and
+        checks that the request includes an <Access Token> signed by Packet Delivery RP
+    end note
+    packetDeliveryPEP->packetDeliveryPEP: Validate\n<Access Token>
+    note over packetDeliveryPEP
+        The Policy Enforcement Point (PEP) asks the
+        Policy Decision Point (PDP) to evaluate if the <Access Token>
+        authorizes caller to access the target service ("Change PTA")
+    end note
+
+    packetDeliveryPEP->packetDeliveryPDP - -++: Evaluate authorisation request for "Change PTA"\nwith <Access Token>
+
+    note over packetDeliveryPDP
+        Use information in <Access Token> to evaluate policies associated to
+        customer roles in the token.
+    end note
+    packetDeliveryPDP->packetDeliveryAR - -++: Retrieve access policies\nfrom the PRP
+    packetDeliveryAR->packetDeliveryPDP - -++: Return policies
+    packetDeliveryPDP->packetDeliveryPDP : Evaluate authorisation\nof user evaluating policies\nassociated to roles
+
+    packetDeliveryPDP->packetDeliveryPEP - -++:Authorisation granted
+    packetDeliveryPEP->packetDeliveryPortal - -++:Forward original request:\nChange PTA on delivery order\nwith <Access Token>
+
+    packetDeliveryPortal->packetDeliveryPortal: Perform change\nRequest forwarded to\nContext Broker (not shown)
+    packetDeliveryPortal->customerBrowser - -:Change confirmed
+
+end group
+
+@enduml
+
+PlantUML version 1.2022.12(Sun Oct 23 20:12:26 CEST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) Client VM
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

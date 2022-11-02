@@ -1,4 +1,4 @@
-@startuml vc_change_pta_new
+@startuml vc_change_pta
 
 title Packet Delivery - HappyPets customer changes PTA
 
@@ -14,7 +14,7 @@ box User #MistyRose
 endbox
 
 box PacketDelivery #ebfcef
-    participant "Packet Delivery\nPEP" as packetDeliveryPEP #92e8c6
+    boundary "Packet Delivery\nPEP" as packetDeliveryPEP #92e8c6
     participant "Packet Delivery\nRP" as packetDeliverySIOP #92e8c6
     database "Packet Delivery\nUniversal\nResolver" as DIDR_pack #92e8c6
     participant "Packet Delivery\nPortal" as packetDeliveryPortal #92e8c6
@@ -37,17 +37,17 @@ group Authentication
         the Packet Delivery Portal displays a QR.
         The QR includes a nonce called <state> that
         will be used by Packet Delivery system to match the
-        start with the end of the login process, seen here [[https://www.google.com Click here]]
+        start with the end of the login process
     end note
     packetDeliveryPortal->customerBrowser --++: Display QR including endpoint URL + <state>
     customerBrowser-->customerSIOP --++: Scan QR
 
-    'Perform a POST to start the process
+    'Perform a GET to start the process
     note over customerSIOP
         The customer uses its wallet to scan the QR in Packet Delivery Portal
         The wallet uses the URL inside the QR to start the process
     end note
-    customerSIOP -> packetDeliverySIOP ++:POST \n/authentication-requests
+    customerSIOP -> packetDeliverySIOP ++:GET /authentication-requests
 
     note over packetDeliverySIOP: The SIOP authentication process is started
     packetDeliverySIOP -> packetDeliverySIOP :Create\nAuthenticaton Request
