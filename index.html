@@ -509,10 +509,26 @@ Authorization: Bearer [the access token]</code></pre>
       <li>
          <p><b>23.</b> The PEP checks that the request to the protected resource includes an Authorization header with a Bearer token, digitally signed by the RP component of Packet Delivery with one of the keys previously configured in the API gateway.</p>
 
+         <p>The way to do this depends on the implementation of the PEP but if it is based on Nginx, an example configuration looks like:</p>
+
+         <pre><code class="language-json">location = /auth {
+    proxy_pass [internal address of PDP component]
+    proxy_pass_request_body off;
+    proxy_set_header Content-Length "";
+    proxy_set_header X-Original-URI $request_uri;
+}
+
+location /[external address of Respource Server] {
+   auth_request /auth;
+   proxy_pass [internal address of Resource Server]
+}</code></pre>
+
+         <p>The PDP will receive the original request without the body but with the headers, which include the Authotization header with the Access Token. If the PDP returns a 2xx response code, the access is allowed by the PEP. If it returns 401 or 403, the access is denied with the corresponding error code. Any other response code returned by the PDP is considered an error. For the 401 error, the client also receives the “WWW-Authenticate” header from the subrequest response.</p>
+
       </li>
 
       <li>
-         <p><b>24.</b> The PEP asks the Policy Decision Point (PDP) to evaluate if the Access Token authorizes the caller to access the target service ("Change PTA on delivery order"). It forwards the original request including the Access Token to the PDP.</p>
+         <p><b>24.</b> As described in the previous step, the PEP asks the Policy Decision Point (PDP) to evaluate if the Access Token authorizes the caller to access the target service ("Change PTA on delivery order"). It forwards the original request including the Access Token to the PDP.</p>
 
       </li>
 
@@ -527,7 +543,7 @@ Authorization: Bearer [the access token]</code></pre>
       </li>
 
       <li>
-         <p><b>28.</b> In our use case, the customer is of category Gold and Packet Delivery is currently paying for the Gold service so the evaluation of the policies grants access to the requested service ("Change PTA on delivery order").</p>
+         <p><b>28.</b> In our use case, the customer is of category Gold and Packet Delivery is currently paying for the Gold service so the evaluation of the policies grants access to the requested service ("Change PTA on delivery order"), by returning a 2xx response code. If it returns 401 or 403, the access is denied.</p>
 
       </li>
 
