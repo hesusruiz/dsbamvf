@@ -1,0 +1,5 @@
+{
+   "typ": "at+JWT",
+   "alg": "RS256",
+   "kid": "at-key"
+}
