@@ -18,6 +18,12 @@ In the interactions, Packet Delivery acts as a Relying Party (RP). The actual Tr
 
 The description of the above diagram is the following:
 
+<figure #fig_change_pta>
+   <img src="./images/vc_change_pta.svg" alt="Customer changes PTA on delivery order" />
+
+   <figcaption>
+      Fig. 1: Change PTA on delivery order
+
 <ul #mainlist>
 
    -(1) Happy Pets customer directs her browser to access the Packet Delivery company portal.
