@@ -63,14 +63,14 @@
                "type": "string",
                "format": "uri"
             },
-            "firstname": {
-               "description": "First name of subject",
+            "familyName": {
+               "description": "Defines current family name(s) of the credential subject",
                "type": "string"
-            },
-            "familyname": {
-               "description": "Family name of subject",
+             },
+             "firstName": {
+               "description": "Defines current first name(s) of the credential subject",
                "type": "string"
-            },
+             },
             "roles": {
                "description": "Defines the roles for the user to be verified by Packet Delivery",
                "type": "array",
