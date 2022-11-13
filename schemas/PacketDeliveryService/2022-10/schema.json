@@ -63,6 +63,14 @@
                "type": "string",
                "format": "uri"
             },
+            "firstname": {
+               "description": "First name of subject",
+               "type": "string"
+            },
+            "familyname": {
+               "description": "Family name of subject",
+               "type": "string"
+            },
             "roles": {
                "description": "Defines the roles for the user to be verified by Packet Delivery",
                "type": "array",
