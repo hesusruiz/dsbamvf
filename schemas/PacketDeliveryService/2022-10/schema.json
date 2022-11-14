@@ -86,8 +86,7 @@
                         "description": "The list of role names",
                         "type": "array",
                         "items": {
-                           "type": "string",
-                           "format": "uri"
+                           "type": "string"
                         }
                      }
                   }
