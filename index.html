@@ -18,7 +18,57 @@
 </p>
 <p>In the following the sequences are shown for the scenario of the Happy Pets customer changing the PTA of the delivery order. In the case of the No Cheaper customer, the sequences would be the same with the only difference being that the request for changing the PTA would be denied.
 </p>
-<h2><span class='secno'>1.1</span>  Sequence description (Happy Pets Customer)</h2>
+<h2><span class='secno'>1.1</span>  General overview of component interactions</h2>
+
+<p>The following diagram describes the main components and general interactiosn among them, which will be described in more detail in a later section below.
+</p>
+
+<figure id="fig_components_overview">
+   <img src="images/Architecture-VCFlows-VC-General.drawio.png" alt="General overview of components">
+
+
+   <figcaption>
+      <p>Fig. 1: General overview of components
+      </p>
+   </figcaption>
+
+</figure>
+
+
+<ul>
+   <li id="1"><p><a href='#1' class='selfref'><b>1.</b></a> The user navigates to the portal of the Service Provider using its Web Browser.</p>
+   </li>
+   <li id="2"><p><a href='#2' class='selfref'><b>2.</b></a> The user is not authenticated and the portal presents a QR code with the URL of the endpoint of the OIDC4VP component. The user scans the QR code and instructs the mobile to invoke the endpoint.</p>
+   </li>
+   <li id="3"><p><a href='#3' class='selfref'><b>3.</b></a> The SIOP/OIDC4VP authentication flow is executed between the mobile and the OIDC4VP component of the Service Provider. During the execution of the flow, both mobile and OIDC4VP component use the Verifiable Data Registry:</p>
+   <div>
+
+      <ul>
+         <li id="30.1"><p>The mobile verifies that the Service Provider is in the Trusted Participant List and that the public key in that list is the one used to digitally sign the messages received from the Service Provider.</p>
+         </li>
+         <li id="30.2"><p>The Service Provider verifies that the digital signature of the Verifiable Credential presented by the user was issued by an entity which is in the Trusted Participants List.</p>
+         </li>
+      </ul>
+
+      <p>In addition, the Service Provider checks that the user presenting the Verifiable Credential controls the private key associated to the DID of the subject to wich the credential corresponds. In other words, that the credential was issued to the user presenting the credential.
+      </p>
+      <p>At the end of this flow, the OIDC4VP component notifies to the portal of the Service Provider the successful authentication, including an access token representing the claims inside the Verifiable Credential, including the roles.
+      </p>
+   </div>
+   </li>
+   <li id="4"><p><a href='#4' class='selfref'><b>4.</b></a> The portal refreshes the screen presenting the available services to the user. The access token is sent to the browser so it can be used as a Bearer token in the Authorization header of subsequent requests.</p>
+   </li>
+   <li id="5"><p><a href='#5' class='selfref'><b>5.</b></a> The user clicks a button invoking a service that requires authorization. The request is intercepted by the plugin of the PEP proxy, which invokes the PDP (Policy Decision Point) to get a decission on whether authorize the request or not.</p>
+   </li>
+   <li id="6"><p><a href='#6' class='selfref'><b>6.</b></a> The PDP uses the data in the incoming request (including the claims inside the access token) to query the Authorization Registry for the appropriate policy rules. The PDP evaluates the rules to make a decision.</p>
+   </li>
+   <li id="7"><p><a href='#7' class='selfref'><b>7.</b></a> The PDP returns the successful decission to the pluging of the PEP, which then forwards the request to the original target (in this case the Context Broker).</p>
+   </li>
+   <li id="8"><p><a href='#8' class='selfref'><b>8.</b></a> The Context Broker executes the request and sends the reply back, will is presented to the user in the web browser.</p>
+   </li>
+</ul>
+
+<h2><span class='secno'>1.2</span>  Sequence description (Happy Pets Customer)</h2>
 
 <p>The following gives a detailed description of the process of changing the PTA attribute by the Happy Pets customer, when using Verifiable Credentials.
 </p>
@@ -32,7 +82,7 @@
 
 
    <figcaption>
-      <p>Fig. 1: Change PTA on delivery order
+      <p>Fig. 2: Change PTA on delivery order
       </p>
    </figcaption>
 
@@ -137,9 +187,9 @@ Host: rp.packetdelivery.com</code></pre>
    <div>
 
       <ul>
-         <li id="117.1"><p>The Public Key of the entity used to verify its digital signatures</p>
+         <li id="155.1"><p>The Public Key of the entity used to verify its digital signatures</p>
          </li>
-         <li id="117.2"><p>Status of the entity in the Trusted Participant List</p>
+         <li id="155.2"><p>Status of the entity in the Trusted Participant List</p>
          </li>
       </ul>
 
@@ -199,15 +249,15 @@ Host: rp.packetdelivery.com</code></pre>
       </p>
 
       <ol>
-         <li id="178.1"><p>Perform the standard verification of the JWT as described in <a href="#RFC8725" class="xref">[RFC8725]</a> and <a href="#RFC7515" class="xref">[RFC7515]</a>, except for the signature.</p>
+         <li id="216.1"><p>Perform the standard verification of the JWT as described in <a href="#RFC8725" class="xref">[RFC8725]</a> and <a href="#RFC7515" class="xref">[RFC7515]</a>, except for the signature.</p>
          </li>
-         <li id="178.2"><p>Check for the existence of the claim <code>auth_request</code> in the JWT and that its contents are a well-formed Authentication Request.</p>
+         <li id="216.2"><p>Check for the existence of the claim <code>auth_request</code> in the JWT and that its contents are a well-formed Authentication Request.</p>
          </li>
-         <li id="178.3"><p>Get the DID of the RP from the <code>client_id</code> parameter of the Authentication Request received in the JWT, making sure that it corresponds exactly to the <code>iss</code> claim in the payload of the JWT.</p>
+         <li id="216.3"><p>Get the DID of the RP from the <code>client_id</code> parameter of the Authentication Request received in the JWT, making sure that it corresponds exactly to the <code>iss</code> claim in the payload of the JWT.</p>
          </li>
-         <li id="178.4"><p>Send a GET request to the <code>/api/did/v1/identifiers/{did}</code> endpoint of one of the Universal Resolvers in the ecosystem, where <code>{did}</code> should be the DID of the RP retrieved in the previous step (in our case the DID of Packet Delivery). The endpoint returns the DID Document corresponding to the DID of the RP.</p>
+         <li id="216.4"><p>Send a GET request to the <code>/api/did/v1/identifiers/{did}</code> endpoint of one of the Universal Resolvers in the ecosystem, where <code>{did}</code> should be the DID of the RP retrieved in the previous step (in our case the DID of Packet Delivery). The endpoint returns the DID Document corresponding to the DID of the RP.</p>
          </li>
-         <li id="178.5"><p>Perform the standard verifications on the DID Document as described in <a href="#VC_DATA" class="xref">[VC_DATA]</a>. In particular it is important to check that the DID inside the DID Document corresponds with the DID that was specified in the GET request.</p>
+         <li id="216.5"><p>Perform the standard verifications on the DID Document as described in <a href="#VC_DATA" class="xref">[VC_DATA]</a>. In particular it is important to check that the DID inside the DID Document corresponds with the DID that was specified in the GET request.</p>
          </li>
       </ol>
 
@@ -327,9 +377,9 @@ presentation_submission=[see definition below]
    <div>
 
       <ol>
-         <li id="300.1"><p>That the DID of the entity which is the issuer of the VC is a trusted participant.</p>
+         <li id="338.1"><p>That the DID of the entity which is the issuer of the VC is a trusted participant.</p>
          </li>
-         <li id="300.2"><p>That the VC was digitally signed by that participant.</p>
+         <li id="338.2"><p>That the VC was digitally signed by that participant.</p>
          </li>
       </ol>
 
@@ -372,17 +422,17 @@ Claims:
       </p>
 
       <ul>
-         <li id="341.1"><p><b>iss</b> and <b>client_id</b> have the same value because the access token has been generated by the RP component of Packet Delivery, not by an IdP as in the "classic" OIDC flows.</p>
+         <li id="379.1"><p><b>iss</b> and <b>client_id</b> have the same value because the access token has been generated by the RP component of Packet Delivery, not by an IdP as in the "classic" OIDC flows.</p>
          </li>
-         <li id="341.2"><p><b>sub</b> identifies the customer using the DID inside the Verifiable Credential received</p>
+         <li id="379.2"><p><b>sub</b> identifies the customer using the DID inside the Verifiable Credential received</p>
          </li>
-         <li id="341.3"><p><b>aud</b> identifies the RS (Resource Server) component in Packet Delivery. In this case we assume that it is internal and does not have a DID assigned, so we use the URI of the component.</p>
+         <li id="379.3"><p><b>aud</b> identifies the RS (Resource Server) component in Packet Delivery. In this case we assume that it is internal and does not have a DID assigned, so we use the URI of the component.</p>
          </li>
-         <li id="341.4"><p><b>kid</b> in the header identifies the key that is used to sign the JWT and which must be configured up-front and known by the RS (Resource Server.</p>
+         <li id="379.4"><p><b>kid</b> in the header identifies the key that is used to sign the JWT and which must be configured up-front and known by the RS (Resource Server.</p>
          </li>
-         <li id="341.5"><p><b>scope</b> has the same value as the equivalent <b>scope</b> parameter in the initial Authorization Request.</p>
+         <li id="379.5"><p><b>scope</b> has the same value as the equivalent <b>scope</b> parameter in the initial Authorization Request.</p>
          </li>
-         <li id="341.6"><p><b>verifiableCredential</b> contains the Verifiable Credential that was received, specifically the value of the first element of the field <code>verifiableCredential</code> of the Verifiable Presentation.</p>
+         <li id="379.6"><p><b>verifiableCredential</b> contains the Verifiable Credential that was received, specifically the value of the first element of the field <code>verifiableCredential</code> of the Verifiable Presentation.</p>
          </li>
       </ul>
 
@@ -392,9 +442,9 @@ Claims:
    <div>
 
       <ol>
-         <li id="357.1"><p>The <code>state</code> nonce that was generated by the portal when it generated the QR code. The portal uses the <code>state</code> nonce to know what login session is notified.</p>
+         <li id="395.1"><p>The <code>state</code> nonce that was generated by the portal when it generated the QR code. The portal uses the <code>state</code> nonce to know what login session is notified.</p>
          </li>
-         <li id="357.2"><p>The access token generated before.</p>
+         <li id="395.2"><p>The access token generated before.</p>
          </li>
       </ol>
 

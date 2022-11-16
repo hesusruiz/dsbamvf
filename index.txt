@@ -9,7 +9,45 @@ In this section we describe the process of changing the PTA attribute of a packe
 
 In the following the sequences are shown for the scenario of the Happy Pets customer changing the PTA of the delivery order. In the case of the No Cheaper customer, the sequences would be the same with the only difference being that the request for changing the PTA would be denied.
 
+## General overview of component interactions
 
+The following diagram describes the main components and general interactiosn among them, which will be described in more detail in a later section below.
+
+<figure #fig_components_overview>
+   <img @images/Architecture-VCFlows-VC-General.drawio.png alt="General overview of components">
+
+   <figcaption>
+      Fig. {#fig_components_overview.num}: General overview of components
+
+<ul>
+
+   -(1) The user navigates to the portal of the Service Provider using its Web Browser.
+   
+   -(2) The user is not authenticated and the portal presents a QR code with the URL of the endpoint of the OIDC4VP component. The user scans the QR code and instructs the mobile to invoke the endpoint.
+   
+   -(3) The SIOP/OIDC4VP authentication flow is executed between the mobile and the OIDC4VP component of the Service Provider. During the execution of the flow, both mobile and OIDC4VP component use the Verifiable Data Registry:
+   
+      <ul>
+      
+         - The mobile verifies that the Service Provider is in the Trusted Participant List and that the public key in that list is the one used to digitally sign the messages received from the Service Provider.
+         
+         - The Service Provider verifies that the digital signature of the Verifiable Credential presented by the user was issued by an entity which is in the Trusted Participants List.
+         
+      In addition, the Service Provider checks that the user presenting the Verifiable Credential controls the private key associated to the DID of the subject to wich the credential corresponds. In other words, that the credential was issued to the user presenting the credential.
+      
+      At the end of this flow, the OIDC4VP component notifies to the portal of the Service Provider the successful authentication, including an access token representing the claims inside the Verifiable Credential, including the roles.
+      
+   -(4) The portal refreshes the screen presenting the available services to the user. The access token is sent to the browser so it can be used as a Bearer token in the Authorization header of subsequent requests.
+   
+   -(5) The user clicks a button invoking a service that requires authorization. The request is intercepted by the plugin of the PEP proxy, which invokes the PDP (Policy Decision Point) to get a decission on whether authorize the request or not.
+   
+   -(6) The PDP uses the data in the incoming request (including the claims inside the access token) to query the Authorization Registry for the appropriate policy rules. The PDP evaluates the rules to make a decision.
+   
+   -(7) The PDP returns the successful decission to the pluging of the PEP, which then forwards the request to the original target (in this case the Context Broker).
+   
+   -(8) The Context Broker executes the request and sends the reply back, will is presented to the user in the web browser.
+   
+   
 ## Sequence description (Happy Pets Customer)
 
 The following gives a detailed description of the process of changing the PTA attribute by the Happy Pets customer, when using Verifiable Credentials.
@@ -22,7 +60,7 @@ The description of the above diagram is the following:
    <img src="./images/vc_change_pta.svg" alt="Customer changes PTA on delivery order" />
 
    <figcaption>
-      Fig. 1: Change PTA on delivery order
+      Fig. {#fig_change_pta.num}: Change PTA on delivery order
 
 <ul #mainlist>
 
