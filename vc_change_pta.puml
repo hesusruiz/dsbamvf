@@ -124,20 +124,21 @@ group Authentication
         For maximum privacy, SIOP (customer) can have a different key for each company where she is a customer.
         In each onboarding process the SIOP can generate a different key pair (pairwise DIDs).
     end note
-    packetDeliverySIOP->customerSIOP : HTTP 200
+ 
+    'Generate an Access Token including the information in the Verifiable Credential
+    packetDeliverySIOP->packetDeliverySIOP : Generate Access Token
+    note over packetDeliverySIOP
+        The RP component generates an Access Token in JWT format signed by the RP component and
+        including the information of the Verifiable Credential needed to perform authorization.
+    end note
+   
+    packetDeliverySIOP->customerSIOP : HTTP 200 with <access token>
     deactivate customerSIOP
     note right customerSIOP
         The wallet receives the response to the POST indicating the
         success or failure of the process.
         The web portal will refresh its content based on the information received
         by the Packet Delivery system.
-    end note
-
-    'Generate an Access Token including the information in the Verifiable Credential
-    packetDeliverySIOP->packetDeliverySIOP : Generate Access Token
-    note over packetDeliverySIOP
-        The RP component generates an Access Token in JWT format signed by the RP component and
-        including the information of the Verifiable Credential needed to perform authorization.
     end note
 
     'Notify the portal so it refreshes the login page with services available to the customer

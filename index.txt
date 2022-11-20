@@ -349,9 +349,7 @@ The description of the above diagram is the following:
 
    -(17) After verifying the credential, Packet Delivery can also verify that the Verifiable Presentation including the Verifiable Credential is sent by the customer and not by a malicious agent. To do so, it uses the Public Key of the customer in the <code>verificationMethod</code> of the <code>credentialSubject</code> structure. That public key is cryptographically bound to the customer DID during the onboarding process that Happy Pets performed with the customer.
 
-   -(18) The RP component of Packet Delivery sends a successful response to the POST request that the SIOP (customer wallet) used to send the Authorization Request to the RP. The wallet receives the response to the POST indicating the success or failure of the process. The RP component of Packet Delivery continues processing because the web portal of Packet Delivery has to be refreshed with the services that this specific customer can access, based on the information received in the Verifiable Credential and the access control policies implemented by Packet Delivery.
-
-   -(19) The RP component of Packet Delivery company creates an Access Token for the customer so she can use it to access services in Packet Delivery company in the future. The RP component generates an Access Token in JWT format signed by the RP component. The access token is intended for use as bearer token over HTTP/1.1 [RFC2616] using Transport Layer Security (TLS) [RFC5246] to access protected resources, and it should use the JWT Profile profile described in <x-ref RFC9068 >.
+   -(18) The RP component of Packet Delivery company creates an Access Token for the customer so she can use it to access services in Packet Delivery company in the future. The RP component generates an Access Token in JWT format signed by the RP component. The access token is intended for use as bearer token over HTTP/1.1 [RFC2616] using Transport Layer Security (TLS) [RFC5246] to access protected resources, and it should use the JWT Profile profile described in <x-ref RFC9068 >.
 
       For our use case, the JWT access token looks like:
 
@@ -389,6 +387,8 @@ The description of the above diagram is the following:
          - <b>scope</b> has the same value as the equivalent <b>scope</b> parameter in the initial Authorization Request.
 
          - <b>verifiableCredential</b> contains the Verifiable Credential that was received, specifically the value of the first element of the field <code>verifiableCredential</code> of the Verifiable Presentation.
+
+   -(19) The RP component of Packet Delivery sends a successful response to the POST request that the SIOP (customer wallet) used to send the Authorization Request to the RP. The wallet receives the response to the POST indicating the success or failure of the process. The RP component of Packet Delivery continues processing because the web portal of Packet Delivery has to be refreshed with the services that this specific customer can access, based on the information received in the Verifiable Credential and the access control policies implemented by Packet Delivery.
 
    -(20) The RP component of Packet Delivery notifies the Portal to refresh the login page so it can present the services to the customer. The notification includes the following:
 
