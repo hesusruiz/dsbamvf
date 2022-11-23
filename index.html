@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="./assets/w3.css">
     <link href="./assets/prism.css" rel="stylesheet">
     <title>Access to data service</title>
+
+   <!-- Open Graph essential META Tags -->
+   <meta property="og:title" content="Access to data service">
+   <meta property="og:type" content="article" />
+   <!--
+   <meta property="og:image" content="{#og_image_url}">
+   <meta property="og:url" content="{#og_document_url}">
+   <meta name="twitter:card" content="summary_large_image">
+   -->
+   <!-- Open Graph non-Essential, But Recommended -->
+   <!--
+   <meta property="og:description" content="{#description}">
+   <meta property="og:site_name" content="European Travel, Inc.">
+   <meta name="twitter:image:alt" content="{#og_image_alt_text}">
+   -->
 </head>
 
 <body>
@@ -512,7 +527,7 @@ location /[external path of Resource Server] {
 
 
 <section id="request_scope">
-   <h2 class="no-num" id="name-scope">Request Scope</h2>
+   <h2 id="name-scope" class="no-num">Request Scope</h2>
 
    <p>According to section 5.3 of <a href="#OIDC4VP" class="xref">[OIDC4VP]</a>, wallets MAY support requesting presentation of credentials using OAuth 2.0 scope values. Such a scope value MUST be an alias for a well-defined presentation definition as it will be refered to in the <code>presentation_submission</code> response parameter.
    </p>
