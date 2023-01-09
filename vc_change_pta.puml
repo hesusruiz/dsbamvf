@@ -17,11 +17,15 @@ box PacketDelivery #ebfcef
     boundary "Packet Delivery\nPEP" as packetDeliveryPEP #92e8c6
     participant "Packet Delivery\nRP" as packetDeliverySIOP #92e8c6
     database "Packet Delivery\nUniversal\nResolver" as DIDR_pack #92e8c6
-    participant "Packet Delivery\nPortal" as packetDeliveryPortal #92e8c6
     participant "Packet Delivery\nPDP" as packetDeliveryPDP #92e8c6
     participant "Packet Delivery\nAuthorisation\nRegistry" as packetDeliveryAR #92e8c6
+    participant "Packet Delivery\nPortal" as packetDeliveryPortal #92e8c6
+    database "Context\nBroker" as contextBroker #92e8c6
 endbox
 
+'###########################################################
+
+'(1,2,3)
 'Visit the Packet Delivery Portal and select logon method
 primeCustomer-->customerBrowser ++: Access portal
 customerBrowser->packetDeliveryPortal --++: Accesses portal
@@ -29,6 +33,7 @@ packetDeliveryPortal->customerBrowser --++: Please select login method
 
 group Authentication
 
+    '(4)
     'A QR code is displayed and scanned by the customer to start the login process.
     'The QR code includes the URL of th eendpoint that will start the process when invoked by the SIOP
     customerBrowser->packetDeliveryPortal --++: Select "Login with VC"
@@ -39,7 +44,11 @@ group Authentication
         will be used by Packet Delivery system to match the
         start with the end of the login process
     end note
+
+    '(5)
     packetDeliveryPortal->customerBrowser --++: Display QR including endpoint URL + <state>
+
+    '(6)
     customerBrowser-->customerSIOP --++: Scan QR
 
     'Perform a GET to start the process
@@ -47,16 +56,22 @@ group Authentication
         The customer uses its wallet to scan the QR in Packet Delivery Portal
         The wallet uses the URL inside the QR to start the process
     end note
+
+    '(7)
     customerSIOP -> packetDeliverySIOP ++:GET /authentication-requests
 
     note over packetDeliverySIOP: The SIOP authentication process is started
+
+    '(8)
     packetDeliverySIOP -> packetDeliverySIOP :Create\nAuthenticaton Request
+    '(9)
     return URI + <Request Token>
     note right customerSIOP
         The Request Token contains the DID of Packet Delivery, among other things
         The URI is the standard SIOP URI for callback
     end note
 
+    '(10)
     'Resolve the DID of Packet Delivery
     customerSIOP -> DIDR ++: Resolve DID of\nPacket Delivery in\n**Trusted Participant List**
     note right DIDR
@@ -73,8 +88,11 @@ group Authentication
         FIWARE uses a Universal Resolver accessing a blockchain network where the Trusted Lists are managed, but Trusted Lists
         can be implemented with any technology suitable for the ecosysmen.
     end note 
+
+    '(11)
     return **DID Document** of\nPacket Delivery Co
 
+    '(12)
     'Verify the Authentication Request using the DID Document
     customerSIOP -> customerSIOP: Verify Authentication Request
     note right customerSIOP
@@ -87,6 +105,8 @@ group Authentication
         trusted participant entity and that it signed the request and the request has not been modified
         since it was signed.
     end note
+
+    '(13)
     customerSIOP -> customerSIOP: Create Authentication Response\nwith <vp_token>
 
     note right customerSIOP
@@ -95,6 +115,8 @@ group Authentication
         In this case there is only one Verifiable Credential, issued
         by Happy Pets to its customer
     end note
+
+    '(14)
     'Perform a POST to send the Authentication Response
     customerSIOP -> packetDeliverySIOP --++: POST <Authentication Response> /siop-sessions
 
@@ -103,6 +125,7 @@ group Authentication
         Authentication Request that was received by the wallet
     end note
 
+    '(15)
     'Resolve DID of HappyPets to see if it is trusted issuer
     packetDeliverySIOP->DIDR_pack ++: Resolve DID of\nHappy Pets in\n**Trusted Participant List**
     note left DIDR_pack
@@ -113,8 +136,11 @@ group Authentication
         Packet Delivery retrieves the DID Document for that DID to check that it is a trusted participant entity.
         In addition it checks the digital signature using the Public Key inside the DID Document.
     end note
+
+    '(16)
     return **DID Document**\nwith public key
 
+    '(17)
     'Verify the Authentication Response from the mobile wallet
     packetDeliverySIOP->packetDeliverySIOP: Verify\nAuthentication Response
     note over packetDeliverySIOP
@@ -124,14 +150,16 @@ group Authentication
         For maximum privacy, SIOP (customer) can have a different key for each company where she is a customer.
         In each onboarding process the SIOP can generate a different key pair (pairwise DIDs).
     end note
- 
+
+    '(18)
     'Generate an Access Token including the information in the Verifiable Credential
     packetDeliverySIOP->packetDeliverySIOP : Generate Access Token
     note over packetDeliverySIOP
         The RP component generates an Access Token in JWT format signed by the RP component and
         including the information of the Verifiable Credential needed to perform authorization.
     end note
-   
+
+    '(19)
     packetDeliverySIOP->customerSIOP : HTTP 200 with <access token>
     deactivate customerSIOP
     note right customerSIOP
@@ -141,6 +169,7 @@ group Authentication
         by the Packet Delivery system.
     end note
 
+    '(20)
     'Notify the portal so it refreshes the login page with services available to the customer
     packetDeliverySIOP-->packetDeliveryPortal --++: Notify with Verifiable Credential and\n<state>
     note over packetDeliverySIOP
@@ -173,38 +202,57 @@ end note
 
 group Authorisation
 
+   '(21)
     packetDeliveryPortal-->customerBrowser --++: Refresh the screen with services available to customers\nand include <Access Token>
 
+   '(22)
     'The customer selects to change the PTA
-    customerBrowser->packetDeliveryPEP --++: Customer selects\n"Change PTA" on delivery order\nSend <Access Token>
+    customerBrowser->packetDeliveryPEP --++: Customer selects\n"Change PTA" on delivery order\nBrowser sends <Access Token>
     note over packetDeliveryPEP
         The Policy Enforcement Point (PEP) intercepts request and
         checks that the request includes an <Access Token> signed by Packet Delivery RP
     end note
+
+    '(23)
     packetDeliveryPEP->packetDeliveryPEP: Validate\n<Access Token>
+
     note over packetDeliveryPEP
         The Policy Enforcement Point (PEP) asks the
         Policy Decision Point (PDP) to evaluate if the <Access Token>
         authorizes caller to access the target service ("Change PTA")
     end note
 
+    '(24)
     packetDeliveryPEP->packetDeliveryPDP --++: Evaluate authorisation request for "Change PTA"\nwith <Access Token>
 
     note over packetDeliveryPDP
         Use information in <Access Token> to evaluate policies associated to
         customer roles in the token.
     end note
+
+    '(25 and 26)
     'Check policies for this customer
-    packetDeliveryPDP->packetDeliveryAR --++: Retrieve access policies\nfrom the PRP
-    packetDeliveryAR->packetDeliveryPDP --++: Return policies
-    packetDeliveryPDP->packetDeliveryPDP : Evaluate authorisation\nof user evaluating policies\nassociated to roles
+    packetDeliveryPDP->packetDeliveryAR --++: Verify if issuer is allowed\nto issue the credential
+    packetDeliveryAR->packetDeliveryPDP --++:
 
+    '(27 and 28)
+    packetDeliveryPDP->packetDeliveryAR --++: Verify if role in the VC\nis allowed access
+    packetDeliveryAR->packetDeliveryPDP --++:
+
+    '(29)
     packetDeliveryPDP->packetDeliveryPEP --++:Authorisation granted
-    packetDeliveryPEP->packetDeliveryPortal --++:Forward original request:\nChange PTA on delivery order\nwith <Access Token>
 
-    packetDeliveryPortal->packetDeliveryPortal: Perform change\nRequest forwarded to\nContext Broker (not shown)
-    packetDeliveryPortal->customerBrowser --:Change confirmed
+    '(30)
+    packetDeliveryPEP->contextBroker --++:Forward original request:\nChange PTA on delivery order
+    '(31)
+    contextBroker->customerBrowser --:Change confirmed
+
+    note right customerBrowser
+        Change performed
+    end note
 
 end group
 
 @enduml
+
+

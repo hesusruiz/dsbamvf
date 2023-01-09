@@ -11,7 +11,7 @@ In the following the sequences are shown for the scenario of the Happy Pets cust
 
 ## General overview of component interactions
 
-The following diagram describes the main components and general interactiosn among them, which will be described in more detail in a later section below.
+The following diagram describes the main components and general interactions among them, which will be described in more detail in a later section below.
 
 <figure #fig_components_overview>
    <img @images/Architecture-VCFlows-VC-General.drawio.png alt="General overview of components">
@@ -64,20 +64,18 @@ The description of the above diagram is the following:
 
 <ul #mainlist>
 
-   -(1) Happy Pets customer directs her browser to access the Packet Delivery company portal.
+   -(1) Happy Pets customer uses her PC browser to access the Packet Delivery company portal. We assume in this scenario a cross-device interaction, that is, the user accesses Packet Delivery services with a PC browser, but authentication is performed with a mobile using Verifiable Credentials, as in typical 2-factor authentication.
       
    -(2) The browser sends a request to the Packet Delivery portal server.
 
    -(3) Happy Pets customer gets forwarded to a page for selecting the desired Identity Provider for login. One of the login options is “Login with Verifiable Credentials” or something similar.
 
-   -(4) Happy Pets customer selects the “Verifiable Credentials” login method, which causes the Packet delivery company portal to generate a QR containing inside the URL of the /authentication-requests endpoint of the RP (Relying Party) component of Packet Delivery. A QR code is used because a Self-Issued OP may be running locally as a native application or progressive web application (PWA), the RP may not have a network-addressable endpoint to communicate directly with the OP. We have to leverage the implicit flow of OpenID Connect to communicate with such locally-running Ops, as described in <x-ref SIOPv2 >.
+   -(4) Happy Pets customer selects the “Verifiable Credentials” login method, which causes the Packet delivery company portal to generate a QR containing inside the URL of the /authentication-requests endpoint of the RP (Relying Party) component of Packet Delivery. A QR code is used because a Self-Issued OP may be running locally as a native application or progressive web application (PWA), the RP may not have a network-addressable endpoint to communicate directly with the OP. We have to leverage the implicit flow of OpenID Connect to communicate with such locally-running Ops, as described in <x-ref SIOPv2>.
 
       The QR code includes a nonce called <code>state</code> that will be used later by the portal to know when a specific login session has finished. In our use case, the URL inside the QR could look like this:
 
       <pre><code class="language-http">
-         GET /authentication-requests?state=af0ifjsldkj HTTP/1.1
-         Host: rp.packetdelivery.com
-            
+         https://portal.packetdelivery.com/authentication-requests?state=af0ifjsldkj</code></pre>
 
    -(5) The QR code is displayed in the customer browser with instructions to scan it and go to the URL inside it.
 
@@ -85,70 +83,102 @@ The description of the above diagram is the following:
       
    -(7) The mobile performs a GET request to the url inside the QR (e.g. https://www.packetdelivery.com/api/authentication-requests). This starts a standard SIOP (Self-Issued OpenID Provider) flow, where the Packet Delivery company plays the role of Relying Party (RP in Open ID Connect terminology) and the mobile device of the customer as a Self-Issued IDP (SIOP).
 
-   -(8) Packet Delivery company RP creates a SIOP Authentication Request. The parameters comprising a request for verifiable presentations are given in section 5 of <x-ref OIDC4VP > and in section 10.1 of <x-ref SIOPv2 > and are reproduced here with the particularities of this use case, in particular that this is a cross-device interaction:
+   -(8) Packet Delivery company RP creates a SIOP Authentication Request. The parameters comprising a request for verifiable presentations are given in section 5 of <x-ref OIDC4VP> and in section 10.1 of <x-ref SIOPv2> and are reproduced here with the particularities of this use case, in particular that this is a cross-device interaction:
 
       <ul>
 
-         -(response_type) REQUIRED. Must be <b>"vp_token"</b>. This parameter is defined in <x-ref RFC6749 >. The possible values are determined by the response type registry established by <x-ref RFC6749 >. The <x-ref OIDC4VP > specification introduces the response type <b>"vp_token"</b>. This response type asks the SIOP to return only a VP Token in the Authorization Response, which is what we want in our case.
+         -(response_type) REQUIRED. Must be <b>"vp_token"</b>. This parameter is defined in <x-ref RFC6749>. The possible values are determined by the response type registry established by <x-ref RFC6749>. The <x-ref OIDC4VP> specification introduces the response type <b>"vp_token"</b>. This response type asks the SIOP to return only a VP Token in the Authorization Response, which is what we want in our case.
 
-         -(scope) REQUIRED. This parameter is defined in <x-ref RFC6749 > which allows it to be used by verifiers to request presentation of credentials by utilizing a pre-defined scope value designating the type of credential. See section <a href="#request_scope" class="xref">Request Scope</a> for more details. We use in this instance the value <code>gaiax.credentials.presentation.CustomerCredential</code> which means that the RP (PacketDelivery) is asking the SIOP (customer wallet) to send a credential of type CustomerCredential issued by any participant in the ecosystem.
+         -(scope) REQUIRED. This parameter is defined in <x-ref RFC6749> which allows it to be used by verifiers to request presentation of credentials by utilizing a pre-defined scope value designating the type of credential. See section <a href="#request_scope" class="xref">Request Scope</a> for more details. We use in this instance the value <code>dsba.credentials.presentation.PacketDeliveryService</code> which means that the RP (PacketDelivery) is asking the SIOP (customer wallet) to send a credential of type <code>PacketDeliveryService</code> issued by any participant in the ecosystem.
 
-         -(response_mode) REQUIRED. MUST be “post”. As this is a cross-device scenario, this response mode is used to request the Self-Issued OP to deliver the result of the authentication process to a certain endpoint using the HTTP POST method. This endpoint to which the SIOP shall deliver the authentication result is conveyed in the parameter <code>redirect_uri</code>.
+         -(response_mode) REQUIRED. MUST be <b>"direct_post"</b>. As this is a cross-device scenario, this response mode is used to instruct the Self-Issued OP to deliver the result of the authentication process to a certain endpoint using the HTTP POST method. This endpoint to which the SIOP shall deliver the authentication result is conveyed in the parameter <code>redirect_uri</code> described below.
 
          -(redirect_uri) (REQUIRED). MUST be a valid RP endpoint. The Authentication Response is sent to this endpoint using <code>POST</code> and encoding <code>application/json</code>)
 
          -(client_id) REQUIRED. MUST be the DID of the RP (Packet Delivery in this case) so it can be resolved by the SIOP and checked against a Trusted List, or rejected if it does not pass validation. This provides a high level of assurance to the SIOP that the RP is really who it claims.
 
-         -(nonce) REQUIRED. This parameter follows the definition given in <x-ref OpenID.Core >. It is used to securely bind the verifiable presentation(s) provided by the wallet (SIOP) to the particular transaction managed by the RP.
+         -(nonce) REQUIRED. This parameter follows the definition given in <x-ref OpenID.Core>. It is used to securely bind the verifiable presentation(s) provided by the wallet (SIOP) to the particular transaction managed by the RP.
 
          -(state) REQUIRED. Used by the portal component of Packet Delivery to associate the start of an authentication session with the end of that session when the RP component notifies to the portal.
 
-         -(presentation_definition) CONDITIONAL. A string containing a <code>presentation_definition</code> JSON object as defined in Section 4 of <x-ref DIF.PresentationExchange >. We do not use this parameter because <code>scope</code> already specifies the credential type.
+         -(presentation_definition) CONDITIONAL. A string containing a <code>presentation_definition</code> JSON object as defined in Section 4 of <x-ref DIF.PresentationExchange>. We do not use this parameter because <code>scope</code> already specifies the credential type.
 
-         -(presentation_definition_uri) CONDITIONAL. A string containing a URL pointing to a resource where a <code>presentation_definition</code> JSON object as defined in Section 4 of <x-ref DIF.PresentationExchange > can be retrieved. We do not use this parameter because <code>scope</code> already specifies the credential type.
+         -(presentation_definition_uri) CONDITIONAL. A string containing a URL pointing to a resource where a <code>presentation_definition</code> JSON object as defined in Section 4 of <x-ref DIF.PresentationExchange> can be retrieved. We do not use this parameter because <code>scope</code> already specifies the credential type.
 
 
-      Note: A request MUST contain either a <code>presentation_definition</code> or a <code>presentation_definition_uri</code> or a single <code>scope</code> value representing a presentation definition, those three ways to request credential presentation are mutually exclusive. We use here the <code>scope</code> mechanism.
+      Note: A request MUST contain either a <code>presentation_definition</code> or a <code>presentation_definition_uri</code> or a single <code>scope</code> value representing a presentation definition, those three ways to request credential presentation are mutually exclusive. We use here the <code>scope</code> mechanism, which is simpler and fits our use case.
 
-      This is an example request (with newlines and leading spaces added for legibility):
+      This is an example request:
 
       <pre><code class="language-http">
          openid://?
-            <b>scope</b>=gaiax.credentials.presentation.CustomerCredential
+            <b>scope</b>=dsba.credentials.presentation.PacketDeliveryService
             &amp;<b>response_type</b>=vp_token
-            &amp;<b>response_mode</b>=post
+            &amp;<b>response_mode</b>=direct_post
             &amp;<b>client_id</b>=did:elsi:packetdelivery
-            &amp;<b>redirect_uri</b>=https%3A%2F%2Fwww.packetdelivery.com%2Fapi%2Fsiop/authentication_response%2Fcb
+            &amp;<b>redirect_uri</b>=https://www.packetdelivery.com/api/authentication_response
             &amp;<b>state</b>=af0ifjsldkj
             &amp;<b>nonce</b>=n-0S6_WzA2Mj
 
-   -(9) The SIOP Authentication Request is returned to the mobile in the reply body of the GET request, as a JWT in JWS form (<x-ref RFC7515 a>), signed with the public key associated with the DID in the client_id field of the Authorization Request. The JWT MUST be generated according to the best practices described in <x-ref RFC8725 >. This is an example of the unencoded contents of such JWT:
+      (URL encoding removed, line breaks and leading spaces added for readability).
+
+   -(9) The SIOP Authentication Request is returned to the mobile in the reply body of the GET request, as a JWT in JWS form (<x-ref RFC7515>), signed with the public key associated with the DID in the client_id field of the Authorization Request. The JWT MUST be generated according to the best practices described in <x-ref RFC8725>. If we are in an iSHARE environment, it has to be an <a href="https://dev.ishareworks.org/introduction/jwt.html">iSHARE JWT</a>, with the following differences:
+
+      <ul>
+
+         <li>Entities are identified using their DIDs, derived from their EORI identifiers.
+
+         <li>In the payload of the JWT the <code>aud</code> claim is the symbolic string "https://self-issued.me/v2", as specified in section 5.5 of <x-ref OIDC4VP>, because the end-user is a natural person and it is unknown for the moment to the Packet Delivery RP component.
+
+      This is an example of the unencoded contents of a non-iSHARE JWT:
 
       <pre><code class="language-json">
          --------------- Header ---------------
          {
             "alg": "ES256",      // This should be one of the supported algorithms in the Data Space
-            "kid": did:elsi:packetdelivery#key-verification
             "typ": "JWT"
+            "kid": "did:elsi:packetdelivery#key-verification"
          }
          --------------- Payload ---------------
          {
-            "iss": did:elsi:packetdelivery,     // Should correspond with the client_id in the AR
+            "iss": "did:elsi:packetdelivery",     // Should correspond with the client_id in the AR
+            "sub": "did:elsi:packetdelivery",     // Should correspond with the client_id in the AR
+            "aud": "https://self-issued.me/v2",   // As specified in section 5.5 of OIDC4VP
             "iat": 1667194901,
             "exp": 1667194961,                  // To avoid replays, here it expires in 60 secs
             "auth_request": "openid://?scope=...&amp;response_type=vp_token&amp;...",
          }
 
-      Where the claim <code>iss</code> MUST be the DID of the RP (in this case Packet Delivery) and correspond exactly with the <code>client_id</code> parameter in the Authentication Request. The claim <code>auth_request</code> contains the Authentication Request as a string. The expiration time in claim <code>exp</code> avoids replays and can be very short because it is used by the SIOP just on reception of the Authentication Request.
+      And this is another example using the iSHARE JWT format (the x5c header parameter is abbreviated for display purposes):
+
+      <pre><code class="language-json">
+         --------------- Header ---------------
+         {
+            "alg": "RS256",
+            "typ": "JWT",
+            "kid": "did:elsi:packetdelivery#key-verification"
+            "x5c": ["MIIGCDCCA/CgAwIB...AgICEAQwDQYJKiDpAqGObwT"]
+         }
+         --------------- Payload ---------------
+         {
+            "iss": "did:elsi:packetdelivery",     // Should correspond with the client_id in the AR
+            "sub": "did:elsi:packetdelivery",     // Should correspond with the client_id in the AR
+            "aud": "https://self-issued.me/v2",   // As specified in section 5.5 of OIDC4VP
+            "iat": 1667194901,
+            "exp": 1667194961,                  // To avoid replays, here it expires in 60 secs
+            "auth_request": "openid://?scope=...&amp;response_type=vp_token&amp;...",
+         }
+
+      Where the claims <code>iss</code> and <code>sub</code> MUST be the DID of the RP (in this case Packet Delivery) and MUST correspond exactly with the <code>client_id</code> parameter in the Authentication Request. The claim <code>auth_request</code> contains the Authentication Request as a string. The expiration time in claim <code>exp</code> avoids replays and can be very short because it is used by the SIOP just on reception of the Authentication Request.
       
 
-   -(10) In this and steps 11 and 12 the customer SIOP verifies that the RP (in this case Packet Delivery) is a trusted entity belonging to the ecosystem, by resolving the DID of the RP received in the <code>client_id</code> parameter of the Authentication Request and verifying the signature of the JWT.
+   -(10) In this step and steps 11 and 12 the customer SIOP verifies that the RP (in this case Packet Delivery) is a trusted entity belonging to the ecosystem, by resolving the DID of the RP received in the <code>client_id</code> parameter of the Authentication Request and verifying the signature of the JWT.
       
-      Before starting DID resolution, we perform the standard verification of the JWT as described in <x-ref RFC8725 > and <x-ref RFC7515 >, except for the signature. We also check for the existence of the claim <code>auth_request</code> in the JWT and that its contents are a well-formed Authentication Request.
+      Before starting DID resolution, we perform the standard verification of the JWT as described in <x-ref RFC8725> and <x-ref RFC7515>, except for the signature which will be checked later. We also check for the existence of the claim <code>auth_request</code> in the JWT and that its contents are a well-formed Authentication Request.
       
       In addition, we get the DID of the RP from the <code>client_id</code> parameter of the Authentication Request received in the JWT, making sure that it corresponds exactly to the <code>iss</code> claim in the payload of the JWT.
 
-      We resolve that DID by sending a GET request to the <code>/api/did/v1/identifiers/{did}</code> endpoint of one of the Universal Resolvers in the ecosystem, where <code>{did}</code> should be the DID of the RP retrieved in the previous step (in our case the DID of Packet Delivery). The endpoint returns the DID Document corresponding to the DID of the RP.
+      We resolve that DID by sending a GET request to the <code>/api/did/v1/identifiers/{did}</code> endpoint of one of the Universal Resolvers in the ecosystem, where <code>{did}</code> should be the DID of the RP retrieved in the previous step (in our case the DID of Packet Delivery). The endpoint returns the DID Document corresponding to the DID of the RP. For the moment, in the i4Trust ecosystem the Universal Resolver endpoint is just a wrapper on top of the existing iSHARE <a href="https://dev.ishareworks.org/scheme-owner/parties.html">Parties</a> endpoint.
 
    -(11) The DID Document (as per W3C) contains relevant information about the entity owning the DID, in particular:
       
@@ -172,37 +202,37 @@ The description of the above diagram is the following:
                "id": "did:elsi:packetdelivery",
                "verificationMethod": [
                   {
-                  "id": "did:elsi:packetdelivery#key-verification",
-                  "type": "JwsVerificationKey2020",
-                  "controller": "did:elsi:packetdelivery",
-                  "publicKeyJwk": {
-                  "kid": "key-verification",
-                  "kty": "EC",
-                  "crv": "secp256k1",
-                  "x": "V8XptJkb5wplYkExcTF4nkyYVp7t5H5d5C4UPqCCM9c",
-                  "y": "kn3nSPxIIvd9iaG0N4v14ceuo8E4PcLXhhGeDzCE7VM"
-                  }
+                     "id": "did:elsi:packetdelivery#key-verification",
+                     "type": "JwsVerificationKey2020",
+                     "controller": "did:elsi:packetdelivery",
+                     "publicKeyJwk": {
+                        "kid": "key-verification",
+                        "kty": "EC",
+                        "crv": "P256",
+                        "x": "V8XptJkb5wplYkExcTF4nkyYVp7t5H5d5C4UPqCCM9c",
+                        "y": "kn3nSPxIIvd9iaG0N4v14ceuo8E4PcLXhhGeDzCE7VM"
+                     }
                   }
                ],
                "service": [
                   {
-                  "id": "did:elsi:packetdelivery#info",
-                  "type": "EntityCommercialInfo",
-                  "serviceEndpoint": "https://www.packetdelivery.com/info",
-                  "name": "Packet Delivery co."
+                     "id": "did:elsi:packetdelivery#info",
+                     "type": "EntityCommercialInfo",
+                     "serviceEndpoint": "https://www.packetdelivery.com/info",
+                     "name": "Packet Delivery co."
                   },
                   {
-                  "id": "did:elsi:packetdelivery#sms",
-                  "type": "SecureMessagingService",
-                  "serviceEndpoint": "https://www.packetdelivery.com/api/securemessage"
+                     "id": "did:elsi:packetdelivery#sms",
+                     "type": "SecureMessagingService",
+                     "serviceEndpoint": "https://www.packetdelivery.com/api/securemessage"
                   }
                ],
                "anchors": [
                   {
-                  "id": "redt.alastria",
-                  "resolution": "UniversalResolver",
-                  "domain": "packetdelivery.ala",
-                  "ethereumAddress": "0xbcB9b29eeb28f36fd84f1CfF98C3F1887D831d78"
+                     "id": "redt.alastria",
+                     "resolution": "UniversalResolver",
+                     "domain": "packetdelivery.ala",
+                     "ethereumAddress": "0xbcB9b29eeb28f36fd84f1CfF98C3F1887D831d78"
                   }
                ],
                "created": "2021-11-14T13:02:37Z",
@@ -211,11 +241,65 @@ The description of the above diagram is the following:
          }
 
 
+      Another example, using the wrapper to query the iSHARE information about a party:
+
+      <pre><code class="language-json">
+         {
+            "payload": {
+               "@context": [
+                  "https://www.w3.org/ns/did/v1",
+                  "https://w3id.org/security/v1"
+               ],
+               "id": "did:elsi:packetdelivery",
+               "verificationMethod": [
+                  {
+                     "id": "did:elsi:packetdelivery#key-assertion",
+                     "type": "JsonWebKey2020",
+                     "controller": "did:elsi:packetdelivery",
+                     "publicKeyJwk": {
+                        "kid": "key-assertion",
+                        "kty": "RSA",
+                        "x5c": [
+                           "MIIGCDCCA/CgAwIB...AgICEAQwDQYJKiDpAqGObwT"
+                        ]
+                     }
+                  }
+               ],
+               "service": [
+                  {
+                     "id": "did:elsi:packetdelivery#capabilities",
+                     "type": "capabilities",
+                     "description": "Retrieves iSHARE capabilities",
+                     "serviceEndpoint": "https://www.packetdelivery.com/capabilities",
+                     "token_endpoint": "https://www.packetdelivery.com/connect/token"
+                  },
+                  {
+                     "id": "did:elsi:packetdelivery#token",
+                     "type": "access token",
+                     "description": "Obtains access token",
+                     "serviceEndpoint": "https://www.packetdelivery.com/connect/token"
+                  },
+                  {
+                     "id": "did:elsi:packetdelivery#info",
+                     "type": "EntityCommercialInfo",
+                     "description": "Retrieves commercial information about entity",
+                     "serviceEndpoint": "https://www.packetdelivery.com/info",
+                     "name": "Packet Delivery co."
+                  }
+               ],
+               "created": "2021-11-14T13:02:37Z",
+               "updated": "2021-11-14T13:02:37Z"
+            }
+         }
+
+
+
+
       The resolution process is implemented as follows:
 
       <ol>
 
-         - Perform the standard verification of the JWT as described in <x-ref RFC8725 > and <x-ref RFC7515 >, except for the signature.
+         - Perform the standard verification of the JWT as described in <x-ref RFC8725> and <x-ref RFC7515>, except for the signature.
 
          - Check for the existence of the claim <code>auth_request</code> in the JWT and that its contents are a well-formed Authentication Request.
 
@@ -223,7 +307,7 @@ The description of the above diagram is the following:
 
          - Send a GET request to the <code>/api/did/v1/identifiers/{did}</code> endpoint of one of the Universal Resolvers in the ecosystem, where <code>{did}</code> should be the DID of the RP retrieved in the previous step (in our case the DID of Packet Delivery). The endpoint returns the DID Document corresponding to the DID of the RP.
 
-         - Perform the standard verifications on the DID Document as described in <x-ref VC_DATA >. In particular it is important to check that the DID inside the DID Document corresponds with the DID that was specified in the GET request.
+         - Perform the standard verifications on the DID Document as described in <x-ref VC_DATA>. In particular it is important to check that the DID inside the DID Document corresponds with the DID that was specified in the GET request.
 
 
       The Universal Resolver server used in this step has to be operated by an entity which is trusted by the customer. To minimize the required trust in the ecosystem there may be many Universal Resolver servers operated by different entities. At least one of those trusted entities has to be configured in the wallet of the user.
@@ -233,16 +317,16 @@ The description of the above diagram is the following:
 
    -(12) After DID resolution, we need to check the signature of the JWT containing the Authorization Request.
       
-      As mentioned above, the DID Document includes one or more public keys inside the <code>verificationMethod</code> array. The keys are identified by the <code>id</code> field in each element of the array. The customer wallet uses the <code>kid</code> field that was received in the Authentication Request (in the protected header of the JWT) to select the corresponding Public Key and verify the signature of the JWT. It also verifies that the top-level <code>id</code> field in the DID Document (<code>did:elsi:EU.EORI.NLPACKETDEL</code>) is equal to the <code>client_id</code> parameter of the Authentication Request.
+      As mentioned above, the DID Document includes one or more public keys inside the <code>verificationMethod</code> array. The keys are identified by the <code>id</code> field in each element of the array. The customer wallet uses the <code>kid</code> field that was received in the Authentication Request (in the protected header of the JWT) to select the corresponding Public Key and verify the signature of the JWT. It also verifies that the top-level <code>id</code> field in the DID Document (<code>did:elsi:packetdelivery</code>) is equal to the <code>client_id</code> parameter of the Authentication Request.
 
    -(13) The customer wallet creates an Authentication Response to be posted in the <code>redirect_uri</code> specified by Packet Delivery company in step 8. The contents of the Authentication Response are described below.
 
-      The response is constructed as defined in section 6.1 of <x-ref OIDC4VP >. In particular, because the Authorization Request included only <code>vp_token</code> as the <code>response_type</code>, the VP Token is provided directly in the Authorization Response and a separate <code>id_token</code> is not needed.
+      The response is constructed as defined in section 6.1 of <x-ref OIDC4VP>. In particular, because the Authorization Request included only <code>vp_token</code> as the <code>response_type</code>, the VP Token is provided directly in the Authorization Response and a separate <code>id_token</code> is not needed.
 
       The contents of the Authentication Response in our specific use case are (shown here with the POST parameters needed to send it):
 
       <pre><code class="language-http">
-         POST /api/siop/authentication_response/cb HTTP/1.1
+         POST /api/siop/authentication_response HTTP/1.1
          Host: www.packetdelivery.com
          Content-Type: application/x-www-form-urlencoded
 
@@ -268,7 +352,7 @@ The description of the above diagram is the following:
             ]
          }
 
-      Which complies with <x-ref DIF.PresentationExchange > and refers to the VP in the <code>vp_token</code> parameter provided in the same response, which looks as follows:
+      Which complies with <x-ref DIF.PresentationExchange> and refers to the VP in the <code>vp_token</code> parameter provided in the same response, which looks as follows:
 
       <pre><code class="language-json">
          {
@@ -282,12 +366,12 @@ The description of the above diagram is the following:
                {
                   "@context": [
                      "https://www.w3.org/2018/credentials/v1",
-                     "https://happypets.fiware.io/2022/credentials/employee/v1"
+                     "https://packetdelivery.fiware.io/2022/credentials/PacketDeliveryService"
                   ],
                   "id": "https://happypets.fiware.io/credentials/25159389-8dd17b796ac0",
                   "type": [
                      "VerifiableCredential",
-                     "CustomerCredential"
+                     "PacketDeliveryService"
                   ],
                   "issuer": {
                      "id": "did:elsi:happypets"
@@ -296,12 +380,12 @@ The description of the above diagram is the following:
                   "validFrom": "2022-03-22T14:00:00Z",
                   "expirationDate": "2023-03-22T14:00:00Z",
                   "credentialSubject": {
-                     "id": "did:peer:99ab5bca41bb45b78d242a46f0157b7d",
+                     "id": "did:key:99ab5bca41bb45b78d242a46f0157b7d",
                      "verificationMethod": [
                         {
-                           "id": "did:peer:99ab5bca41bb45b78d242a46f0157b7d#key1",
-                           "type": "JwsVerificationKey2020",
-                           "controller": "did:peer:99ab5bca41bb45b78d242a46f0157b7d",
+                           "id": "did:key:99ab5bca41bb45b78d242a46f0157b7d#key1",
+                           "type": "JsonWebKey2020",
+                           "controller": "did:key:99ab5bca41bb45b78d242a46f0157b7d",
                            "publicKeyJwk": {
                               "kid": "key1",
                               "kty": "EC",
@@ -319,21 +403,35 @@ The description of the above diagram is the following:
                            ]
                         }
                      ],
-                     "name": "Jane Doe",
                      "given_name": "Jane",
                      "family_name": "Doe",
-                     "preferred_username": "j.doe",
-                     "email": "janedoe@packetdelivery.com"
+                     "email": "janedoe@email.com"
+                  },
+                  "proof": {
+                     "type": "RsaSignature2018",
+                     "created": "2022-03-22T14:00:00Z",
+                     "proofPurpose": "assertionMethod",
+                     "verificationMethod": "did:elsi:happypets#key-assertion",
+                     "jws": "eyJhbGciOiJFZERTQ...ChT_Zh5s8cF_2cSRWELuD8JQdBw"
                   }
                }
-            ]
+            ],   
+            "proof": {
+               "type": "EcdsaSecp256r1Signature2019",
+               "created": "2022-06-22T14:00:00Z",
+               "proofPurpose": "authentication",
+               "verificationMethod": "did:key:99ab5bca41bb45b78d242a46f0157b7d#key1",
+               "challenge": "1f44d55f-f161-4938-a659-f8026467f126",
+               "domain": "4jt78h47fh47",
+               "jws": "..."
+            }
          }
 
-      The above Verifiable Presentation includes only one Verifiable Credential of type <code>CustomerCredential</code> that was issued by Happy Pets to a customer. The <code>credentialSubject</code> object in the credential has an <code>id</code> field with value <code>did:peer:99ab5bca41bb45b78d242a46f0157b7d</code> which is the DID of the user and that is not registered in any blockchain or centralized repository.
+      The above Verifiable Presentation includes only one Verifiable Credential of type <code>PacketDeliveryService</code> that was issued by Happy Pets to a customer. The <code>credentialSubject</code> object in the credential has an <code>id</code> field with value <code>did:key:99ab5bca41bb45b78d242a46f0157b7d</code> which is the DID of the user and that for privacy reasons is not registered in any public database or blockchain.
 
-   -(14) The SIOP (customer wallet) sends the Authentication Response to the endpoint passed in the <code>redirect_uri</code> parameter of the Authentication Request, sending a HTTP POST request using <code>application/x-www-form-urlencoded</code> encoding.
+   -(14) The SIOP (customer wallet) sends the Authentication Response to the endpoint received in the <code>redirect_uri</code> parameter of the Authentication Request, sending a HTTP POST request using <code>application/x-www-form-urlencoded</code> encoding.
 
-   -(15 and 16) The Packet Delivery RP component receives the Authorization Request and has to perform verifications, the standard ones being defined in <x-ref DIF.PresentationExchange >. In order to verify that the Verifiable Credential has been issuer by a trusted participant in the ecosystem, Packet Delivery has to verify:
+   -(15 and 16) The Packet Delivery RP component receives the Authorization Request and has to perform verifications, the standard ones being defined in <x-ref DIF.PresentationExchange>. In order to verify that the Verifiable Credential has been issued by a trusted participant in the ecosystem, Packet Delivery has to verify:
 
       <ol>
 
@@ -349,7 +447,7 @@ The description of the above diagram is the following:
 
    -(17) After verifying the credential, Packet Delivery can also verify that the Verifiable Presentation including the Verifiable Credential is sent by the customer and not by a malicious agent. To do so, it uses the Public Key of the customer in the <code>verificationMethod</code> of the <code>credentialSubject</code> structure. That public key is cryptographically bound to the customer DID during the onboarding process that Happy Pets performed with the customer.
 
-   -(18) The RP component of Packet Delivery company creates an Access Token for the customer so she can use it to access services in Packet Delivery company in the future. The RP component generates an Access Token in JWT format signed by the RP component. The access token is intended for use as bearer token over HTTP/1.1 [RFC2616] using Transport Layer Security (TLS) [RFC5246] to access protected resources, and it should use the JWT Profile profile described in <x-ref RFC9068 >.
+   -(18) The RP component of Packet Delivery company creates an Access Token for the customer so she can use it to access services in Packet Delivery company in the future. The RP component generates an Access Token in JWT format signed by the RP component. The access token is intended for use as bearer token over HTTP/1.1 [RFC2616] using Transport Layer Security (TLS) [RFC5246] to access protected resources, and it should use the JWT Profile profile described in <x-ref RFC9068>.
 
       For our use case, the JWT access token looks like:
 
@@ -362,7 +460,7 @@ The description of the above diagram is the following:
 
          {
             "iss": "did:elsi:packetdelivery",
-            "sub": "did:peer:99ab5bca41bb45b78d242a46f0157b7d",
+            "sub": "did:key:99ab5bca41bb45b78d242a46f0157b7d",
             "aud":   "https://contextbroker.packetdelivery.com/",
             "exp": 1639528912,
             "iat": 1618354090,
@@ -372,7 +470,7 @@ The description of the above diagram is the following:
             "verifiableCredential": [the VC that was received inside the Verifiable Presentation]
          }
 
-      Where, according to <x-ref RFC9068 >:
+      Where, according to <x-ref RFC9068>:
 
       <ul>
 
@@ -421,7 +519,7 @@ The description of the above diagram is the following:
 
       The request is intercepted by the Policy Enforcement Point (PEP) component of Packet Delivery, an API gateway.
 
-   -(23) The PEP checks that the request to the protected resource includes an Authorization header with a Bearer token, digitally signed by the RP component of Packet Delivery with one of the keys previously configured in the API gateway.
+   -(23) Formal validation of Access Token. The PEP checks that the request to the protected resource includes an Authorization header with a Bearer token, digitally signed by the RP component of Packet Delivery with one of the keys previously configured in the API gateway.
 
       The way to do this depends on the implementation of the PEP but if it is based on Nginx, an example configuration looks like:
 
@@ -440,43 +538,43 @@ The description of the above diagram is the following:
 
       The PDP will receive the original request without the body but with the headers, which include the Authotization header with the Access Token. If the PDP returns a 2xx response code, the access is allowed by the PEP. If it returns 401 or 403, the access is denied with the corresponding error code. Any other response code returned by the PDP is considered an error. For the 401 error, the client also receives the “WWW-Authenticate” header from the subrequest response.
 
-   -(24) As described in the previous step, the PEP asks the Policy Decision Point (PDP) to evaluate if the Access Token authorizes the caller to access the target service ("Change PTA on delivery order"). It forwards the original request including the Access Token to the PDP.
+   -(24) Forward request to PDP for authorisation decision. As described in the previous step, the PEP asks the Policy Decision Point (PDP) to evaluate if the Access Token authorizes the caller to access the target service ("Change PTA on delivery order"). It forwards the original request including the Access Token to the PDP.
 
-   -(25 and 26) The PDP uses information in the Access Token to retrieve from the Policy Retrieval Point (PRP)the relevant policy definitions required to evaluate authorization for the request. The PRP is where the access authorization policies are stored, typically a database or the filesystem.
+   -(25 and 26) Verify that the issuer is allowed to issue the credential. The PDP uses information in the Access Token to retrieve from the Policy Retrieval Point (PRP) the relevant policy definitions required to evaluate whether the issuer is allowed to issue the credential, in this case if Happy Pets acquired the service from Packet Delivery. The PRP is where the access authorization policies are stored, typically a database or the filesystem.
 
-   -(27) The PDP uses information in the Access Token and the policies retrieved from the PRP to evaluate policies associated to customer roles and any additional attributes in the token. One of the policies retrieved correwsponds to the purchasing status of the Happy Pets company with respect to the services provided by Packet Delivery.
+   -(27 and 28) Verify that the role in the VC is allowed to make the call. The PDP uses the role information in the Access Token and the policies retrieved from the PRP to check if the caller is allowed to execute the operation on the target resource.
 
-   -(28) In our use case, the customer is of category Gold and Packet Delivery is currently paying for the Gold service so the evaluation of the policies grants access to the requested service ("Change PTA on delivery order"), by returning a 2xx response code. If it returns 401 or 403, the access is denied.
+   -(29) Authorisation response. In our use case both Happy Pets is paying for the Gold service to Packet Delivery and the customer is of category Gold, so the evaluation of the policies grants access to the requested service ("Change PTA on delivery order"), by returning a 2xx response code. If it returns 401 or 403, the access is denied.
 
-   -(29) The PEP (API gateway) receives the successful reply and forwards the request, including the Access Token, to the RS (Resource Server). In this case to the Context Broker, not shown in the diagram.
+   -(30) The PEP (API gateway) receives the successful reply and forwards the request, including the Access Token, to the RS (Resource Server). In this case to the Context Broker.
 
-   -(30 and 31) The request is executed and the reply is sent to the customer browser, where the customer can continue using the Packet Delivery portal for any other requests she may want to execute.
+   -(31 and 32) The request is executed and the reply is sent to the customer browser, where the customer can continue using the Packet Delivery portal for any other requests she may want to execute.
 
 
 <section id="request_scope">
 
    <h2 id="name-scope" .no-num>Request Scope
 
-   According to section 5.3 of <x-ref OIDC4VP >, wallets MAY support requesting presentation of credentials using OAuth 2.0 scope values. Such a scope value MUST be an alias for a well-defined presentation definition as it will be refered to in the <code>presentation_submission</code> response parameter.
+   According to section 5.3 of <x-ref OIDC4VP>, wallets MAY support requesting presentation of credentials using OAuth 2.0 <code>scope</code> values. Such a scope value MUST be an alias for a well-defined presentation definition as it will be refered to in the <code>presentation_submission</code> response parameter.
 
 
-   In this specification we define concrete scope values and the mapping between a certain scope value and the respective presentation definition, in particular the mapping between scope values and specific types of Verifiable Credentials used for access control in the use case described in this document. In a production implementation of a Data Space ecosystem, the Trust Framework has to define the mappings used in the ecosysyem and the mechanisms and governance models used to update those mappings.
+   In this specification we define concrete scope values and the mapping between a certain scope value and the respective presentation definition, in particular the mapping between scope values and specific types of Verifiable Credentials used for access control in the use case described in this document. In a production implementation of a Data Space ecosystem, the Trust Framework has to define the mappings used in the ecosysyem and the mechanisms and governance model used to update those mappings.
 
 
    The mappings that we will use in this use case are the following:
 
-   Scope <b>gaiax.credentials.presentation.EmployeeCredential</b> represents the following presentation definition:
+   For employees (or machines with delegated access) of entities in the ecosystem creating or modifying delivery orders in Packet Delivery, the scope <b>dsba.credentials.presentation.PacketDeliveryManagement</b> represents the following presentation definition:
 
    <pre><code class="language-json">
       {
-         "id": "EmployeePresentationDefinition",
+         "id": "PacketDeliveryManagementDefinition",
          "input_descriptors": [
             {
-               "id": "employee credential",
+               "id": "management credential",
                "format": {
                   "ldp_vc": {
                      "proof_type": [
-                        "Ed25519Signature2018"
+                        "RsaSignature2018"
                      ]
                   }
                },
@@ -488,7 +586,7 @@ The description of the above diagram is the following:
                         ],
                         "filter": {
                            "type": "string",
-                           "pattern": "EmployeeCredential"
+                           "pattern": "PacketDeliveryManagement"
                         }
                      }
                   ]
@@ -497,20 +595,18 @@ The description of the above diagram is the following:
          ]
       }
 
-
-    
-   Scope <b>gaiax.credentials.presentation.CustomerCredential</b>: represents the following presentation definition:
+   For customers of entities in the ecosystem that want to access services provided by Packet Delivery, the scope <b>dsba.credentials.presentation.PacketDeliveryService</b> represents the following presentation definition:
     
    <pre><code class="language-json">
       {
-         "id": "CustomerPresentationDefinition",
+         "id": "PacketDeliveryServiceDefinition",
          "input_descriptors": [
             {
                "id": "customer credential",
                "format": {
                   "ldp_vc": {
                      "proof_type": [
-                        "Ed25519Signature2018"
+                        "RsaSignature2018"
                      ]
                   }
                },
@@ -522,7 +618,7 @@ The description of the above diagram is the following:
                         ],
                         "filter": {
                            "type": "string",
-                           "pattern": "CustomerCredential"
+                           "pattern": "PacketDeliveryService"
                         }
                      }
                   ]
@@ -566,27 +662,17 @@ The description of the above diagram is the following:
       <dt id="DIF.PresentationExchange">[DIF.PresentationExchange]
 
       <dd>
-         <span class="refAuthor">Buchner, D.</span><span class="refAuthor">, Zundel, B.</span><span
-         class="refAuthor">, Riedel, M.</span><span class="refAuthor">, and K. H. Duffy</span>, <span
-         class="refTitle">"Presentation Exchange 2.0.0"</span>, <span>&lt;<a
-            href="https://identity.foundation/presentation-exchange">https://identity.foundation/presentation-exchange</a>&gt;</span>.
+         <span class="refAuthor">Buchner, D.</span><span class="refAuthor">, Zundel, B.</span> <span class="refAuthor">, Riedel, M.</span><span class="refAuthor">, and K. H. Duffy</span>, <span class="refTitle">"Presentation Exchange 2.0.0"</span>, <span>&lt;<a href="https://identity.foundation/presentation-exchange">https://identity.foundation/presentation-exchange</a>&gt;</span>.
 
       <dt id="OpenID.Registration">[OpenID.Registration]
 
       <dd>
-         <span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Bradley, J.</span><span
-         class="refAuthor">, and M. B. Jones</span>, <span class="refTitle">"OpenID Connect Dynamic Client
-            Registration 1.0 incorporating errata set 1"</span>, <time datetime="2014-11-08">8 November 2014</time>,
-         <span>&lt;<a
-            href="https://openid.net/specs/openid-connect-registration-1_0.html">https://openid.net/specs/openid-connect-registration-1_0.html</a>&gt;</span>.
+         <span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Bradley, J.</span><span class="refAuthor">, and M. B. Jones</span>, <span class="refTitle">"OpenID Connect Dynamic Client Registration 1.0 incorporating errata set 1"</span>, <time datetime="2014-11-08">8 November 2014</time>, <span>&lt;<a href="https://openid.net/specs/openid-connect-registration-1_0.html">https://openid.net/specs/openid-connect-registration-1_0.html</a>&gt;</span>.
 
       <dt id="DID-Core">[DID-Core]
 
       <dd>
-         <span class="refAuthor">Sporny, M.</span><span class="refAuthor">, Guy, A.</span><span class="refAuthor">,
-            Sabadello, M.</span><span class="refAuthor">, and D. Reed</span>, <span class="refTitle">"Decentralized
-            Identifiers (DIDs) v1.0"</span>, <time datetime="2021-08-03">3 August 2021</time>, <span>&lt;<a
-            href="https://www.w3.org/TR/2021/PR-did-core-20210803/">https://www.w3.org/TR/2021/PR-did-core-20210803/</a>&gt;</span>.
+         <span class="refAuthor">Sporny, M.</span><span class="refAuthor">, Guy, A.</span><span class="refAuthor">, Sabadello, M.</span><span class="refAuthor">, and D. Reed</span>, <span class="refTitle">"Decentralized Identifiers (DIDs) v1.0"</span>, <time datetime="2021-08-03">3 August 2021</time>, <span>&lt;<a href="https://www.w3.org/TR/2022/REC-did-core-20220719/">https://www.w3.org/TR/did-core/</a>&gt;</span>.
 
       <dt id="RFC7591">[RFC7591]
 
@@ -597,7 +683,6 @@ The description of the above diagram is the following:
 
       <dd>
          <span class="refAuthor">Bertocci, V.</span>, <span class="refTitle">"JSON Web Token (JWT) Profile for OAuth 2.0 Access Tokens"</span>, <span class="seriesInfo">RFC 9068</span>, <span class="seriesInfo">DOI 10.17487/RFC9068</span>, <time datetime="2021-10">October 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc9068">https://www.rfc-editor.org/info/rfc9068</a>&gt;</span>.
-
 
       <dt id="OpenID.Core">[OpenID.Core]
 
@@ -628,5 +713,4 @@ The description of the above diagram is the following:
 
       <dd>
          <span class="refAuthor">Lodderstedt, T.</span><span class="refAuthor">, Yasuda, K.</span><span class="refAuthor">, and T. Looker</span>, <span class="refTitle">"OpenID for Verifiable Credential Issuance"</span>, <time datetime="2022-06-20">20 June 2022</time>, <span>&lt;<a href="https://openid.net/specs/openid-4-verifiable-credential-issuance.html">https://openid.net/specs/openid-4-verifiable-credential-issuance.html</a>&gt;</span>.
-
 
